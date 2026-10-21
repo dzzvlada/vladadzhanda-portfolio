@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>SoftServe Academy — Vlada Dzhanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0B0D;color:#F4F4F2;font-family:'Open Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:#F4F4F2;text-decoration:none}
+a:hover{color:#BAF811}
+@media (max-width:760px){
+[data-m=ptable]{grid-template-columns:28px minmax(0,1fr)!important;gap:6px 14px!important;padding-left:0!important;padding-right:0!important}
+[data-m=ptable]>:nth-child(3){grid-column:2}
+[data-m=xtable]{grid-template-columns:minmax(0,1fr) auto!important;gap:4px 16px!important}
+[data-m=xtable]>:nth-child(2){grid-column:1/-1;grid-row:2}
+[data-m=xtable]>:nth-child(3){grid-column:2;grid-row:1}
+[data-m=prow]{grid-template-columns:minmax(0,1fr) 28px!important;gap:4px 16px!important}
+[data-m=prow]>:nth-child(2){grid-column:1;grid-row:2;font-size:15px}
+[data-m=prow]>:nth-child(3){grid-column:2;grid-row:1/3}
+[data-m=h90]{font-size:clamp(44px,12vw,90px)!important}
+[data-m=card]{width:84px!important}
+[data-m=nav]{gap:18px!important}
+}
+@media (max-width:1199px){[data-m=br]{display:none}}
+@media (min-width:560px) and (max-width:1100px){[data-m=ctx]{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)!important}}
+@media (max-width:1100px){[data-m=fullw]{max-width:none!important}}
+@media (max-width:440px){[data-m=nm]{display:none!important}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#0B0B0D;">
+  <header style="position:sticky;top:0;z-index:20;background:rgba(11,11,13,.85);backdrop-filter:blur(10px);">
+    <nav style="max-width:1440px;margin:0 auto;padding:22px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="Main%20Page.dc.html" style="display:flex;align-items:center;gap:14px;font-weight:700;font-size:15px;line-height:1;">
+        <span aria-hidden="true" style="color:#BAF811;font-weight:800;font-size:40px;line-height:13px;height:13px;display:block;transform:translateY(5px);">*</span>
+        <span data-m="nm" style="line-height:13px;">Vlada Dzhanda</span>
+      </a>
+      <div data-m="nav" style="display:flex;align-items:center;gap:clamp(24px,4vw,56px);font-size:15px;line-height:15px;">
+        <a href="Main%20Page.dc.html#about">About</a>
+        <div onMouseEnter="{{ pmOn }}" onMouseLeave="{{ pmOff }}" style="position:relative;display:flex;align-items:center;">
+          <a href="Main%20Page.dc.html#projects">Projects</a>
+          <div style="position:absolute;top:100%;right:-16px;padding-top:18px;min-width:360px;opacity:{{ pmOp }};pointer-events:{{ pmPe }};transform:translateY({{ pmY }});transition:opacity .25s ease,transform .25s ease;">
+            <div style="background:#0B0B0D;border:1px solid #2A2A2D;display:flex;flex-direction:column;padding:4px 0;box-shadow:0 12px 32px rgba(0,0,0,.08);">
+            <span style="padding:10px 16px 8px;font-size:12px;letter-spacing:.08em;color:#8E8E93;">Projects</span>
+            <a href="English%20Vitamin.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #2A2A2D;color:#F4F4F2;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#1A1A1D;color:#BAF811;"><span>English Vitamin</span><span style="font-size:12px;color:#8E8E93;white-space:nowrap;">Brand Strategy &amp; Identity</span></a>
+            <a href="SoftServe%20Academy.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #2A2A2D;color:#F4F4F2;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;font-weight:700;" style-hover="background:#1A1A1D;color:#BAF811;"><span>SoftServe Academy</span><span style="font-size:12px;color:#8E8E93;white-space:nowrap;">Rebranding</span></a>
+            <a href="Open%20Tech.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #2A2A2D;color:#F4F4F2;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#1A1A1D;color:#BAF811;"><span>Open Tech</span><span style="font-size:12px;color:#8E8E93;white-space:nowrap;">Brand Concept &amp; Identity</span></a>
+            <a href="Company%20Day.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #2A2A2D;color:#F4F4F2;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#1A1A1D;color:#BAF811;"><span>Company Day</span><span style="font-size:12px;color:#8E8E93;white-space:nowrap;">Event Visual Direction</span></a>
+            <a href="Anniversary.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #2A2A2D;color:#F4F4F2;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#1A1A1D;color:#BAF811;"><span>Anniversary Collection</span><span style="font-size:12px;color:#8E8E93;white-space:nowrap;">Product Design</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="Main%20Page.dc.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <a href="#" onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;right:clamp(20px,4vw,56px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F4F2;color:#0B0B0D;font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s,color .2s;" style-hover="background:#BAF811;color:#0B0B0D;">↑</a>
+
+  <section data-screen-label="01 Hero" style="max-width:1440px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,56px) clamp(64px,8vw,120px);display:flex;flex-direction:column;gap:clamp(28px,3vw,44px);">
+    <h1 style="margin:0;font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1.08;letter-spacing:-.01em;">SoftServe Academy<br><span style="color:#6E6E73;">Rebrand &amp; Visual System</span></h1>
+    <div style="width:100%;aspect-ratio:2576/496;min-height:220px;background:#BAF811;overflow:hidden;"><img src="assets/ssa-logo-banner.png" alt="SoftServe Academy logo" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);row-gap:32px;">
+      <div style="display:flex;flex-wrap:wrap;gap:24px clamp(16px,2vw,32px);">
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#8E8E93;">Services</span><span style="font-size: 14px; line-height: 1.75; color: #F4F4F2">- Competitive analysis<br>- Colour <br>- Visual system<br>- Templates<br>- Guidelines</span></div>
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#8E8E93;">Industries</span><span style="font-size:14px;line-height:1.5;color:#F4F4F2;">IT education</span></div>
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#8E8E93;">Client</span><span style="font-size:14px;line-height:1.5;color:#F4F4F2;">SoftServe Academy with the marketing team</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <p style="margin:0;font-size:17px;line-height:1.55;color:#F4F4F2;text-wrap:pretty;">A rainbow of inconsistent visuals, unified into one recognizable system — across 40+ AI-generated course visuals.</p>
+        <a href="#overview" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #F4F4F2;padding-top:10px;font-size:14px;color:#F4F4F2;transition:color .2s ease;" style-hover="color:#BAF811;">See more<span style="font-size:20px;line-height:1;">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-m="ctx" id="overview" data-screen-label="02 Overview" style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">01 · Overview</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">By 2024 the Academy had scale <br data-m="br">and reputation, but its visual communication hadn't kept up.</h2>
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">SoftServe Academy is the educational arm of SoftServe — <br data-m="br">an ecosystem that has been creating and developing IT talent since 2005. It trains everyone from first-steps students <br data-m="br">to career switchers to experts in emerging fields like AI, Robotics, and Cybersecurity.</p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">My work was to give it one coherent visual identity — <br data-m="br">a system recognizable enough to match the authority <br data-m="br">the Academy had already earned.</p>
+      </div>
+    </div>
+    <figure style="margin:0;width:100%;max-width:504px;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);"><img src="assets/ssa-overview.png" alt="AI-generated machine visual for SoftServe Academy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"></figure>
+  </section>
+
+  <section data-screen-label="03 Problem" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">02 · The problem</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">A rainbow, not a brand</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(40px,5vw,72px));">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;max-width:62ch;text-wrap:pretty;">Until 2024, the Academy's visuals were a patchwork. <br data-m="br">Different areas and courses looked like separate projects rather than one school: many gradients, several illustration styles, inconsistent formats, and random imagery that said nothing about the technology it sold.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;max-width:62ch;text-wrap:pretty;">The cost was real: the Academy was losing recognition to competitors, had no unified visual logic across courses and daily communications, and no single element that said at a glance — <em>this is SoftServe Academy.</em></p>
+    </div>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(8px,1vw,14px);">
+        <img src="assets/ssa-before-07.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-08.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-09.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-10.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-11.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-12.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-13.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-14.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-15.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-16.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-17.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+        <img src="assets/ssa-before-18.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+      </div>
+      <figcaption style="display:flex;justify-content:space-between;gap:16px;font-size:13px;color:#8E8E93;"><span style="color:#F4F4F2;font-weight:600;">Before</span><span>Public posts until 2024</span></figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="04 Challenge" style="background:#BAF811;color:#0B0B0D;">
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(28px,3vw,44px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#0B0B0D;">03 · The challenge</span>
+      <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.015em;max-width:40ch;text-wrap:balance;color:#0B0B0D;">How do you turn a rainbow of inconsistent visuals into <span style="color:#0B0B0D;font-weight:700;">one recognizable system</span> — one that reads as a near-two-decade authority, not just another course-seller?</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#2A2A2D;max-width:62ch;text-wrap:pretty;">The IT-education market is crowded with schools that all look loud <br data-m="br">and interchangeable. The task wasn't to add more colour or energy. <br data-m="br">It was to impose discipline — a system coherent enough that <br data-m="br">the Academy's experience showed in how it looked.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Role" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">04 · My role</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">I worked as Brand &amp; Visual Designer on the rebrand.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;border-bottom:1px solid #3A3A3E;">
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid #3A3A3E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#F4F4F2;transition:background .25s ease;" style-hover="background:#1C1C1F;"><span style="color:#8E8E93;font-weight:700;">1</span><span style="font-weight:700;">Competitive visual analysis</span><span style="opacity:.8;">auditing how competitors communicate, and their visual <br>strengths and weaknesses.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid #3A3A3E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#F4F4F2;transition:background .25s ease;" style-hover="background:#1C1C1F;"><span style="color:#8E8E93;font-weight:700;">2</span><span style="font-weight:700;">Colour system</span><span style="opacity:.8;">selecting the new palette and its proportions.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid #3A3A3E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#F4F4F2;transition:background .25s ease;" style-hover="background:#1C1C1F;"><span style="color:#8E8E93;font-weight:700;">3</span><span style="font-weight:700;">Visual language</span><span style="opacity:.8;">the AI-driven system that became the Academy's signature.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid #3A3A3E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#F4F4F2;transition:background .25s ease;" style-hover="background:#1C1C1F;"><span style="color:#8E8E93;font-weight:700;">4</span><span style="font-weight:700;">Templates &amp; applications</span><span style="opacity:.8;">course visuals, daily communications, events, campaigns and merch.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid #3A3A3E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#F4F4F2;transition:background .25s ease;" style-hover="background:#1C1C1F;"><span style="color:#8E8E93;font-weight:700;">5</span><span style="font-weight:700;">Brand guidelines</span><span style="opacity:.8;">documenting the system so the team could run it.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px dashed #4A4A4E;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#8E8E93;"><span>—</span><span>Positioning &amp; audience strategy</span><span>Led by the marketing team and kept confidential here.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="06 Colour" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">05 · Competitive analysis → the colour decision</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">Discipline, not more colour.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(40px,5vw,72px));">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;max-width:62ch;text-wrap:pretty;">I audited the category to understand how IT-education <br data-m="br">brands look — what reads as credible, what reads as noise. The analysis surfaced an opening: the combination <br data-m="br">of <strong style="color: rgb(244, 244, 242); font-weight: 600;">green and purple</strong> was largely unclaimed in the space.</p>
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:62ch;">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">We committed to it as the Academy's signature palette, <br data-m="br">with defined proportions so it would stay consistent across hundreds of touchpoints, anchored by black and white, <br data-m="br">with a full greyscale range for support.</p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The palette is deliberately strict — these four colours, <br data-m="br">their shades, and nothing else. The limitation is the point.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1vw,14px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(8px,1vw,14px);">
+        <div style="aspect-ratio:4/5;background:#BAF811;border:1px solid #BAF811;box-sizing:border-box;padding:clamp(16px,1.6vw,24px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#000000;"><span style="font-size:15px;font-weight:600;">Acid green</span><span style="font-size:13px;">#BAF811</span></div>
+        <div style="aspect-ratio:4/5;background:#7B29D0;border:1px solid #7B29D0;box-sizing:border-box;padding:clamp(16px,1.6vw,24px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#FFFFFF;"><span style="font-size:15px;font-weight:600;">Purple</span><span style="font-size:13px;">#7B29D0</span></div>
+        <div style="aspect-ratio:4/5;background:#000000;border:1px solid #3A3A3E;box-sizing:border-box;padding:clamp(16px,1.6vw,24px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#FFFFFF;"><span style="font-size:15px;font-weight:600;">Black</span><span style="font-size:13px;">#000000</span></div>
+        <div style="aspect-ratio:4/5;background:#FFFFFF;border:1px solid #232326;box-sizing:border-box;padding:clamp(16px,1.6vw,24px);display:flex;flex-direction:column;justify-content:flex-end;gap:4px;color:#000000;"><span style="font-size:15px;font-weight:600;">White</span><span style="font-size:13px;">#FFFFFF</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));height:clamp(36px,4vw,56px);">
+        <div style="background:#1C1C1C;"></div><div style="background:#333333;"></div><div style="background:#4D4D4D;"></div><div style="background:#666666;"></div><div style="background:#808080;"></div><div style="background:#A6A6A6;"></div><div style="background:#CCCCCC;"></div><div style="background:#EBEBEB;"></div>
+      </div>
+      <span style="font-size:13px;color:#8E8E93;">Greyscale range for support</span>
+    </div>
+    <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:900px;text-wrap:pretty;">The validation came after launch: <span style="color: rgb(186, 248, 17);">competitors began copying <br data-m="br">the same palette.</span> When the category starts imitating you, <br data-m="br">the colour decision was right.</p>
+  </section>
+
+  <section data-screen-label="07 Visual system" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">06 · The visual system</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">Every technology is a machine</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(40px,5vw,72px));">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;max-width:62ch;text-wrap:pretty;">Instead of stock photos or random illustration, I built a rule: every programming language or technology is its own machine — a mechanism that metaphorically conveys <br data-m="br">its logic and character.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;max-width:62ch;text-wrap:pretty;">The payoff is a system, not a set of pretty pictures. <br data-m="br">Across 40+ unique course visuals, QA, Test Automation, Java, .NET, DevOps — every direction is instantly distinguishable, consistent, and tied to the actual technology, never arbitrary. One visual principle scales across the entire lineup.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><img src="assets/ssa-practical-testing.png" alt="Practical Testing course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;color:#8E8E93;"><span style="color:#F4F4F2;font-weight:600;">Practical Testing</span> · close-up</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><img src="assets/ssa-python-backend.png" alt="Python Backend course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;color:#8E8E93;"><span style="color:#F4F4F2;font-weight:600;">Python Backend</span> · close-up</figcaption></figure>
+    </div>
+    <div data-m="g4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);margin-top:calc(-1 * clamp(20px,2.5vw,36px));">
+      
+      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;"><img src="assets/ssa-course-mlops.png" alt="MLOps course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;">MLOps</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;"><img src="assets/ssa-course-java.jpg" alt="Java course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;">Java</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;"><img src="assets/ssa-course-net.png" alt=".NET course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;">.NET</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;"><img src="assets/ssa-course-devops.png" alt="DevOps course visual" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><figcaption style="font-size:13px;">DevOps</figcaption></figure>
+    </div>
+    <h3 style="margin:0 0 calc(-1 * clamp(16px,2vw,40px));font-weight:400;font-size:17px;line-height:1.25;letter-spacing:-.01em;">What holds it together:</h3>
+    <div style="display:flex;flex-direction:column;border-bottom:1px solid #3A3A3E;">
+      <div onMouseEnter="{{ b0 }}" onMouseLeave="{{ bOff }}" style="border-top:1px solid #3A3A3E;background:{{ bg0 }};color:{{ fg0 }};transition:background .35s ease,color .35s ease;cursor:default;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(32px,3.6vw,60px) clamp(12px,1.4vw,20px) 0;">
+          <span style="font-size:clamp(40px,5.6vw,90px);font-weight:400;line-height:.92;letter-spacing:-.03em;display:block;text-box:trim-both cap alphabetic;color:{{ tc0 }};transition:color .35s ease;">Machines</span>
+          <span aria-hidden="true" style="flex:none;font-size:clamp(28px,2.6vw,44px);font-weight:300;line-height:1;transform:rotate({{ pr0 }});color:{{ tc0 }};transition:transform .4s ease,color .35s ease;">+</span>
+        </div>
+        <div style="display:grid;grid-template-rows:{{ br0 }};transition:grid-template-rows .5s ease;">
+          <div style="overflow:hidden;">
+            <div style="display:flex;flex-direction:column;gap:clamp(24px,3vw,48px);padding:clamp(20px,2.4vw,36px) clamp(12px,1.4vw,20px) 0;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(24px,3vw,48px);align-items:start;"><p style="margin:0;font-size:17px;line-height:1.6;text-wrap:pretty;">Every programming language or technology is treated as a mechanism — its own “machine” that conveys its logic and character. Most backgrounds are generated in Midjourney: for each course, a unique machine <br data-m="br">in one recognizable Academy style — depth, light, <br data-m="br">a technological atmosphere.</p><p style="margin:0;font-size:17px;line-height:1.6;text-wrap:pretty;">This makes the visuals a system, not a set of pictures: consistent across the whole lineup, unique to each course, and tied to a real language or direction — never random illustration.</p></div>
+              <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1vw,14px);">
+                <img src="assets/ssa-machine2-java.png" alt="Java machine" style="width:100%;aspect-ratio:1716/915;object-fit:cover;display:block;"><img src="assets/ssa-machine2-testing.png" alt="Testing machine" style="width:100%;aspect-ratio:1716/915;object-fit:cover;display:block;"><img src="assets/ssa-machine2-genai1.png" alt="GenAI machine" style="width:100%;aspect-ratio:1716/915;object-fit:cover;display:block;"><img src="assets/ssa-machine2-genai2.png" alt="GenAI machine head" style="width:100%;aspect-ratio:1716/915;object-fit:cover;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height:{{ sp0 }};transition:height .5s ease;"></div>
+      </div>
+      <div onMouseEnter="{{ b1 }}" onMouseLeave="{{ bOff }}" style="border-top:1px solid #3A3A3E;background:{{ bg1 }};color:{{ fg1 }};transition:background .35s ease,color .35s ease;cursor:default;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(32px,3.6vw,60px) clamp(12px,1.4vw,20px) 0;">
+          <span style="font-size:clamp(40px,5.6vw,90px);font-weight:400;line-height:.92;letter-spacing:-.03em;display:block;text-box:trim-both cap alphabetic;color:{{ tc1 }};transition:color .35s ease;">Cut corner</span>
+          <span aria-hidden="true" style="flex:none;font-size:clamp(28px,2.6vw,44px);font-weight:300;line-height:1;transform:rotate({{ pr1 }});color:{{ tc1 }};transition:transform .4s ease,color .35s ease;">+</span>
+        </div>
+        <div style="display:grid;grid-template-rows:{{ br1 }};transition:grid-template-rows .5s ease;">
+          <div style="overflow:hidden;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:stretch;padding:clamp(20px,2.4vw,36px) clamp(12px,1.4vw,20px) 0;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(20px,2.4vw,36px);">
+              <div style="display:flex;flex-direction:column;gap:20px;"><span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">The element</span><p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">A recognizable cut-corner shape is the system's building block: the same element combines into content blocks across every touchpoint. Its size adapts to the text, but it always sits on a clear modular grid with fixed internal spacing — and it is always present.</p></div>
+              <div style="display:flex;flex-direction:column;gap:20px;"><span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">The discipline</span><p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">One rule keeps it from getting loud: the graphic never overloads the frame. In total it occupies roughly 20–30% of the visual, leaving room for the machine, the imagery, <br data-m="br">and air. Structure <br data-m="br">and restraint, <br data-m="br">not decoration.</p></div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(12px,1.4vw,20px);align-items:stretch;"><div style="border:1px solid #3A3A3E;border-radius:0;padding:clamp(20px,2vw,32px);display:flex;flex-direction:column;gap:20px;min-height:100%;box-sizing:border-box;">
+                <svg viewBox="0 0 300 200" style="width:100%;height:auto;display:block;" aria-hidden="true"><polygon points="2,2 298,2 298,146 244,198 2,198" fill="none" stroke="#BAF811" stroke-width="3"></polygon></svg>
+                <span style="font-size:13px;line-height:1.5;color:#8E8E93;">The element — one cut corner, reused as a building block</span>
+              </div>
+              <div style="border:1px solid #3A3A3E;border-radius:0;padding:clamp(20px,2vw,32px);display:flex;flex-direction:column;gap:20px;min-height:100%;box-sizing:border-box;background:linear-gradient(160deg,#1C1C1F,#0B0B0D);justify-content:space-between;min-height:220px;">
+                <span style="align-self:flex-end;font-size:13px;color:#B4B4B8;">≈ 25–30% of the frame</span>
+                <div style="width:62%;min-width:min(100%,200px);aspect-ratio:3/2;background:#BAF811;clip-path:polygon(0 0,100% 0,100% 72%,86% 100%,0 100%);display:flex;align-items:flex-end;padding:0 18% clamp(14px,1.4vw,20px) clamp(12px,1.2vw,18px);box-sizing:border-box;"><img src="assets/ssa-logo-white.png" alt="SoftServe Academy" style="width:min(100%,150px);height:auto;display:block;filter:brightness(0);"></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div style="height:{{ sp1 }};transition:height .5s ease;"></div>
+      </div>
+      <div onMouseEnter="{{ b2 }}" onMouseLeave="{{ bOff }}" style="border-top:1px solid #3A3A3E;background:{{ bg2 }};color:{{ fg2 }};transition:background .35s ease,color .35s ease;cursor:default;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(32px,3.6vw,60px) clamp(12px,1.4vw,20px) 0;">
+          <span style="font-size:clamp(40px,5.6vw,90px);font-weight:400;line-height:.92;letter-spacing:-.03em;display:block;text-box:trim-both cap alphabetic;color:{{ tc2 }};transition:color .35s ease;">Logo</span>
+          <span aria-hidden="true" style="flex:none;font-size:clamp(28px,2.6vw,44px);font-weight:300;line-height:1;transform:rotate({{ pr2 }});color:{{ tc2 }};transition:transform .4s ease,color .35s ease;">+</span>
+        </div>
+        <div style="display:grid;grid-template-rows:{{ br2 }};transition:grid-template-rows .5s ease;">
+          <div style="overflow:hidden;">
+            <div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding:clamp(20px,2.4vw,36px) clamp(12px,1.4vw,20px) 0;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(20px,2.4vw,36px);">
+                <div style="display:flex;flex-direction:column;gap:20px;"><span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">Unchanged</span><p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The logo wasn't redesigned — and that was deliberate. The Academy already had <br data-m="br">a recognizable softserve | academy lockup; what changed was the system around it, not the mark itself.</p></div>
+                <div style="display:flex;flex-direction:column;gap:20px;"><span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">The constant</span><p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The logo stayed the fixed point the machines, colour, and cut corner all anchor to. Keeping it untouched is its own discipline: we didn't fix what wasn't broken.</p></div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
+                <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><div style="aspect-ratio:3/1;background:#000000;border:1px solid #3A3A3E;border-radius:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="assets/ssa-logo-white.png" alt="SoftServe Academy logo" style="width:56%;height:auto;display:block;"></div><figcaption style="font-size:13px;color:#8E8E93;">On black</figcaption></figure>
+                <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><div style="aspect-ratio:3/1;background:#FFFFFF;border-radius:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="assets/ssa-logo-white.png" alt="SoftServe Academy logo" style="width:56%;height:auto;display:block;filter:brightness(0);"></div><figcaption style="font-size:13px;color:#8E8E93;">On white</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height:{{ sp2 }};transition:height .5s ease;"></div>
+      </div>
+    </div>
+    <p style="margin:clamp(16px,3vw,48px) 0 0;font-weight:400;font-size:clamp(24px,2.4vw,36px);line-height:1.2;letter-spacing:-.02em;max-width:1100px;text-wrap:balance;">Together, these are the <span style="color:#BAF811;">"strong unifying element"</span> the brand had been missing: the thing that says, at a glance, <em>this is SoftServe Academy.</em></p>
+  </section>
+
+  <section data-screen-label="08 Scale">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,12vw,192px) clamp(20px,4vw,56px) clamp(80px,10vw,160px);display:flex;flex-direction:column;gap:clamp(56px,6.5vw,104px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">07 · The system at scale</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">The identity isn't just course covers.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(56px,6.5vw,104px));">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The course lineup is organized as a matrix — areas (QA, Java, Test Automation, DevOps…) × learning levels (Basic, Advanced, <br data-m="br">Project-based, Full Course, Upskill, Expert, Internship) — so the whole ecosystem navigates logically and looks like one brand.</p>
+      
+    </div>
+    <div style="overflow-x:auto;">
+      <div style="min-width:860px;display:grid;grid-template-columns:120px repeat(7,minmax(0,1fr));font-size:13px;">
+        <span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;color:#8E8E93;">Area × Level</span>
+        <span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Basic</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Advanced</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Project-based</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Full Course</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Upskill</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Expert</span><span style="padding:12px 8px;border-bottom:1px solid #3A3A3E;">Internship</span>
+        <sc-for list="{{ areas }}" as="ar" hint-placeholder-count="5">
+          <span style="padding:10px 8px;border-bottom:1px solid #2A2A2D;font-weight:600;display:flex;align-items:center;">{{ ar.name }}</span>
+          <sc-for list="{{ ar.cells }}" as="c" hint-placeholder-count="7">
+            <span style="padding:10px 8px;border-bottom:1px solid #2A2A2D;"><span style="display:block;aspect-ratio:1/1;background:#232326;background-image:{{ c.bg }};background-size:cover;background-position:center;"></span></span>
+          </sc-for>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  <div style="background:#0B0B0D;color:#F4F4F2;">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(56px,6.5vw,104px);">
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">On top of that sits a full set of templates: daily communications, events, and merch — the same system applied everywhere, <br data-m="br">so the SoftServe Academy is recognizable far beyond a single post.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(24px,2.6vw,40px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,14px);"><img src="assets/ssa-daily-1.png" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><img src="assets/ssa-daily-2.png" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><img src="assets/ssa-daily-5b.jpg" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><img src="assets/ssa-daily-3.png" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><img src="assets/ssa-daily-4.png" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"><img src="assets/ssa-daily-6.jpg" alt="Daily communication post" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;"></div><figcaption style="font-size:13px;color:#F4F4F2;font-weight:600;">Daily communications</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,14px);"><img src="assets/ssa-event-1.png" alt="Event visual" style="width:100%;height:auto;display:block;"><img src="assets/ssa-event-2.png" alt="Event visual" style="width:100%;height:auto;display:block;"></div><figcaption style="font-size:13px;color:#F4F4F2;font-weight:600;">Events</figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,14px);"><img src="assets/ssa-merch2-life.png" alt="Notebook and carabiner" style="width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block;"><img src="assets/ssa-merch2-bag.png" alt="Tote bag" style="width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block;"><img src="assets/ssa-merch2-bottle.png" alt="Water bottle with Academy sticker" style="width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><figcaption style="font-size:13px;color:#F4F4F2;font-weight:600;">Merch</figcaption></figure>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section data-screen-label="09 Different" style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:clamp(40px,6vw,96px);row-gap:clamp(56px,6.5vw,104px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">08 · What makes the Academy different</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;max-width:22ch;" data-m="fullw">Beyond the look, <br data-m="br">the Academy stands <br data-m="br">for more than courses: learning that opens doors.</h2>
+    </div>
+    <div data-m="fullw" style="display:flex;flex-direction:column;gap:20px;max-width:52ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">It's practical, mentor-led, and connected to real industry — the kind of place where finishing a course is a beginning, not an end.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The visual system had to carry that weight: look like somewhere serious enough to build a future, not just somewhere to buy a course.</p>
+    </div>
+    <img src="assets/ssa-final-hoodie.png" alt="Academy hoodie with “20 years of breaking limits” patch" style="grid-column:1 / -1;width:100%;height:auto;display:block;">
+  </section>
+
+  <section data-screen-label="10 Result" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">09 · Result</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">After launch, two things proved the system worked.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2vw,28px);">
+      <div style="background:#BAF811;color:#000000;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+        <p style="margin:0;font-size:clamp(22px,2vw,30px);line-height:1.3;color:#000000;text-wrap:pretty;">Competitors started copying the palette</p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#000000;text-wrap:pretty;">The green-and-purple space the Academy claimed became the one others chased.</p>
+      </div>
+      <div style="border:1px solid #3A3A3E;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+        <p style="margin:0;font-size:clamp(22px,2vw,30px);line-height:1.3;text-wrap:pretty;">“Is this a photo?”</p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#B4B4B8;text-wrap:pretty;">The AI visuals were mistaken for photography. <br data-m="br">Viewers asked whether the backgrounds were photos — and were genuinely surprised to learn they were AI-generated. The system read as crafted and real, not synthetic.</p>
+      </div>
+    </div>
+    <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:900px;">One brand, one recognizable system — unmistakable at a glance.</p>
+  </section>
+
+  <section data-screen-label="11 Closing" style="max-width:1440px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(20px,4vw,56px) clamp(48px,5vw,72px);display:flex;flex-direction:column;gap:clamp(48px,6vw,96px);">
+    <div style="display:flex;flex-direction:column;gap:32px;max-width:1100px;padding:0 0 clamp(48px,6vw,96px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#BAF811;">10 · Reflection</span>
+      <p style="margin:0;font-size:17px;line-height:1.45;max-width:62ch;text-wrap:pretty;">SoftServe Academy didn't need to look louder. It needed one system disciplined enough to match two decades of experience — and distinctive enough that the category started following it.</p>
+      <p style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;">One system, built to be unmistakable.</p>
+    </div>
+    <a href="Open%20Tech.dc.html" style="display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid #3A3A3E;padding-top:24px;">
+      <span style="display:flex;flex-direction:column;gap:8px;"><span style="font-size:13px;color:#8E8E93;">Next project</span><span style="font-size:clamp(32px,4vw,64px);line-height:1;">Open Tech</span></span>
+      <span style="font-size:clamp(28px,3vw,48px);">→</span>
+    </a>
+    <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#8E8E93;">
+      <span>Vlada Dzhanda · Brand Strategy &amp; Design</span>
+      <span>In collaboration with the SoftServe marketing team</span>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { pm: false, showTop: false,  b: -1 };
+  componentDidMount() {
+    this._onTop = () => { const nearEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160; const show = window.scrollY > window.innerHeight * 0.6 && !nearEnd; if (show !== this.state.showTop) this.setState({ showTop: show }); };
+    window.addEventListener('scroll', this._onTop, { passive: true });
+    this._onTop();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onTop); }
+  renderVals() {
+    const t = this.state.showTop;
+    return Object.assign({}, this._rv(), { pmOn: () => this.setState({ pm: true }), pmOff: () => this.setState({ pm: false }), pmOp: this.state.pm ? 1 : 0, pmPe: this.state.pm ? 'auto' : 'none', pmY: this.state.pm ? '0' : '-6px',  topOpacity: t ? 1 : 0, topPointer: t ? 'auto' : 'none', topShift: t ? '0' : '12px', toTop: e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  }
+  _rv() {
+    const qa = ['basic','advanced','project','full',null,'expert','internship'].map(n => ({ bg: n ? 'url(assets/ssa-qa-' + n + '.png)' : 'none' })); const blank = () => [0,1,2,3,4,5,6].map(() => ({ bg: 'none' })); const v = { areas: [{ name: 'QA', cells: qa }, { name: 'Java', cells: ['basic','advanced','project','full',null,null,'internship'].map(n => ({ bg: n ? 'url(assets/ssa-java-' + n + '.png)' : 'none' })) }, { name: 'Test Automation', cells: ['basic','advanced','project','full',null,null,'internship'].map(n => ({ bg: n ? 'url(assets/ssa-ta-' + n + '.png)' : 'none' })) }, { name: 'DevOps', cells: blank() }, { name: '…', cells: blank() }] }, b = this.state.b;
+    [0, 1, 2].forEach(i => { v['b' + i] = () => this.setState({ b: i }); v['br' + i] = b === i ? '1fr' : '0fr'; v['bg' + i] = 'transparent'; v['fg' + i] = '#F4F4F2'; v['sp' + i] = 'clamp(32px,3.6vw,60px)'; v['tc' + i] = b === i ? '#BAF811' : '#F4F4F2'; v['pr' + i] = b === i ? '45deg' : '0deg'; });
+    v.bOff = () => this.setState({ b: -1 });
+    return v;
+  }
+}
+</script>
+</body>
+</html>

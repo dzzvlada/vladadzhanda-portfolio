@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Company Day — Vlada Dzhanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FCF7EF;color:#1A1918;font-family:'Open Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:#1A1918;text-decoration:none}
+a:hover{color:#0160CD}
+@media (max-width:760px){
+[data-m=ptable]{grid-template-columns:28px minmax(0,1fr)!important;gap:6px 14px!important;padding-left:0!important;padding-right:0!important}
+[data-m=ptable]>:nth-child(3){grid-column:2}
+[data-m=xtable]{grid-template-columns:minmax(0,1fr) auto!important;gap:4px 16px!important}
+[data-m=xtable]>:nth-child(2){grid-column:1/-1;grid-row:2}
+[data-m=xtable]>:nth-child(3){grid-column:2;grid-row:1}
+[data-m=prow]{grid-template-columns:minmax(0,1fr) 28px!important;gap:4px 16px!important}
+[data-m=prow]>:nth-child(2){grid-column:1;grid-row:2;font-size:15px}
+[data-m=prow]>:nth-child(3){grid-column:2;grid-row:1/3}
+[data-m=h90]{font-size:clamp(44px,12vw,90px)!important}
+[data-m=card]{width:84px!important}
+[data-m=nav]{gap:18px!important}
+}
+@media (max-width:1199px){[data-m=br]{display:none}}
+@media (min-width:560px) and (max-width:1100px){[data-m=ctx]{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)!important}}
+@media (min-width:560px) and (max-width:1100px){[data-m=ctxn]{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)!important}}
+@media (max-width:440px){[data-m=nm]{display:none!important}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#FCF7EF;">
+  <header style="position:sticky;top:0;z-index:20;background:rgba(252,247,239,.9);backdrop-filter:blur(10px);">
+    <nav style="max-width:1440px;margin:0 auto;padding:22px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="Main%20Page.dc.html" style="display:flex;align-items:center;gap:14px;font-weight:700;font-size:15px;line-height:1;">
+        <span aria-hidden="true" style="color:#0160CD;font-weight:800;font-size:40px;line-height:13px;height:13px;display:block;transform:translateY(5px);">*</span>
+        <span data-m="nm" style="line-height:13px;">Vlada Dzhanda</span>
+      </a>
+      <div data-m="nav" style="display:flex;align-items:center;gap:clamp(24px,4vw,56px);font-size:15px;line-height:15px;">
+        <a href="Main%20Page.dc.html#about">About</a>
+        <div onMouseEnter="{{ pmOn }}" onMouseLeave="{{ pmOff }}" style="position:relative;display:flex;align-items:center;">
+          <a href="Main%20Page.dc.html#projects">Projects</a>
+          <div style="position:absolute;top:100%;right:-16px;padding-top:18px;min-width:360px;opacity:{{ pmOp }};pointer-events:{{ pmPe }};transform:translateY({{ pmY }});transition:opacity .25s ease,transform .25s ease;">
+            <div style="background:#FCF7EF;border:1px solid #D9D5CE;display:flex;flex-direction:column;padding:4px 0;box-shadow:0 12px 32px rgba(0,0,0,.08);">
+            <span style="padding:10px 16px 8px;font-size:12px;letter-spacing:.08em;color:#6B665F;">Projects</span>
+            <a href="English%20Vitamin.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#E8F0FB;color:#0160CD;"><span>English Vitamin</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Brand Strategy &amp; Identity</span></a>
+            <a href="SoftServe%20Academy.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#E8F0FB;color:#0160CD;"><span>SoftServe Academy</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Rebranding</span></a>
+            <a href="Open%20Tech.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#E8F0FB;color:#0160CD;"><span>Open Tech</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Brand Concept &amp; Identity</span></a>
+            <a href="Company%20Day.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;font-weight:700;" style-hover="background:#E8F0FB;color:#0160CD;"><span>Company Day</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Event Visual Direction</span></a>
+            <a href="Anniversary.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;" style-hover="background:#E8F0FB;color:#0160CD;"><span>Anniversary Collection</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Product Design</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="Main%20Page.dc.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <a href="#" onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;right:clamp(20px,4vw,56px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#1A1918;color:#FCF7EF;font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s,color .2s;" style-hover="background:#0160CD;color:#FCF7EF;">↑</a>
+
+  <section data-screen-label="01 Hero" style="max-width:1440px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,56px) clamp(64px,8vw,120px);display:flex;flex-direction:column;gap:clamp(28px,3vw,44px);">
+    <h1 style="margin:0;font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1.08;letter-spacing:-.01em;">Company Day<br><span style="color:#ABA59C;">Visual rollout &amp; brand consistency</span></h1>
+    <div style="width:100%;aspect-ratio:1760/339;min-height:220px;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-hero.png" alt="SoftServe photo frame on a blue draped stage, Company Day 2025" style="width:100%;height:100%;object-fit:cover;object-position:50% 72%;display:block;transform:rotate(-0.22deg) scale(1.015);"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);row-gap:32px;">
+      <div style="display:flex;flex-wrap:wrap;gap:24px clamp(16px,2vw,32px);">
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#6B665F;">Services</span><span style="font-size:14px;line-height:1.75;">- Visual rollout<br>- Agency coordination<br>- Quality control<br>- Final approval</span></div>
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#6B665F;">Industries</span><span style="font-size:14px;line-height:1.5;">- Corporate event<br>- Employer brand</span></div>
+        <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:14px;"><span style="font-size:12px;line-height:1.5;color:#6B665F;">Client</span><span style="font-size:14px;line-height:1.5;">SoftServe<br><span style="color: rgb(107, 102, 95);">global concept</span></span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <p style="margin:0;font-size:17px;line-height:1.55;text-wrap:pretty;">SoftServe's global birthday event, rolled out across <br data-m="br">12 Ukrainian cities and 5 outdoor locations — one visual language kept intact across several external agencies.</p>
+        <a href="#overview" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1A1918;padding-top:10px;font-size:14px;transition:color .25s ease;" style-hover="color:#0160CD;">See more<span style="font-size:20px;line-height:1;">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-m="ctxn" id="overview" data-screen-label="02 Overview" style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,140px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">01 · Overview</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">A global event needs one face everywhere.</h2>
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">Company Day is SoftServe's global birthday celebration — every year, teams in every location the company has offices gather to mark it together. Each year has its own idea; <br data-m="br">in 2025 it was one line: <strong style="color: rgb(26, 25, 24);">You shape the moment.</strong></p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">Company Day 2025 marked the company's 32nd birthday. My role was to implement this at the Ukrainian location: <br data-m="br">12 cities, 5 outdoor locations — every location reading <br data-m="br">as the same celebration.</p>
+      </div>
+    </div>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:504px;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+      <img src="assets/cd-overview.png" alt="“You shape the moment” stand with the softserve logo, dancers in the background" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:28% 50%;display:block;background:#D9D5CE;">
+      <figcaption style="display:flex;justify-content:space-between;gap:16px;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">Indoor location</span><span>Company Day 2025</span></figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="03 Context" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">02 · The context</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">The concept was set globally</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(40px,5vw,72px));">
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">The hard part is everything that happens after a concept exists: it has to land in many very different places at once — different cities, different formats, different teams building it.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">Each handoff is a chance for the brand to drift. <br data-m="br">In collaboration with several external agencies that provide design and decoration services across the country, <br data-m="br">the real problem wasn't a weak concept.</p>
+    </div>
+    <p style="margin:clamp(40px,5vw,80px) 0 0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;max-width:1200px;">The risk was a strong idea <span style="color:#0160CD;">falling apart in execution</span>.</p>
+  </section>
+
+  <section data-screen-label="04 Challenge" style="background:#0160CD;color:#FCF7EF;">
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#DCE8F8;">03 · The challenge</span>
+      <p style="margin:0;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;color:#FCF7EF;max-width:1100px;text-wrap:pretty;">How do you keep one visual language intact across 12 cities, 5 outdoor locations, and several external agencies — without a single team touching every layout?</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);">
+        <div style="display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(252,247,239,.4);padding-top:20px;">
+          <span style="font-size:13px;color:#DCE8F8;">Not the task</span>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#FCF7EF;text-wrap:pretty;">This wasn't a design-from-scratch task.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(252,247,239,.4);padding-top:20px;">
+          <span style="font-size:13px;color:#DCE8F8;">The task</span>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#FCF7EF;text-wrap:pretty;">Consistency at scale: hold the integrity of a system that many hands would build, in parallel, under event deadlines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Role" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">04 · My role</span>
+      <p style="margin:0;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">I owned the visual rollout and design support for Company Day in Ukraine.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">The concept came from the global team; <br data-m="br">keeping it whole across the country was mine.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">In short: I was the point that kept 12 cities <br data-m="br">speaking one language.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;width:100%;margin-top:52px;">
+      <div onMouseEnter="{{ s0 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>Key visual materials</span></div>
+        <div style="display:grid;grid-template-rows:{{ r0 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;opacity:{{ o0 }};transition:opacity .4s;">Developing the layouts the locations and agencies worked from.</p></div></div>
+      </div>
+      <div style="padding:4px 0;font-size:18px;color:#6B665F;">↓</div>
+      <div onMouseEnter="{{ s1 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>Briefing &amp; coordination</span></div>
+        <div style="display:grid;grid-template-rows:{{ r1 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;opacity:{{ o1 }};transition:opacity .4s;">Briefing and managing the external agencies producing design and decoration.</p></div></div>
+      </div>
+      <div style="padding:4px 0;font-size:18px;color:#6B665F;">↓</div>
+      <div onMouseEnter="{{ s2 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>Quality control</span></div>
+        <div style="display:grid;grid-template-rows:{{ r2 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;opacity:{{ o2 }};transition:opacity .4s;">Checking every output against <br data-m="br">the brand guidelines.</p></div></div>
+      </div>
+      <div style="padding:4px 0;font-size:18px;color:#6B665F;">↓</div>
+      <div onMouseEnter="{{ s3 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;border-bottom:1px solid #1A1918;padding:22px 0 calc(22px + 4px + 4px + 1.36 * 18px);cursor:default;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>Final approval</span><span style="font-size:14px;color:#6B665F;">Before production</span></div>
+        <div style="display:grid;grid-template-rows:{{ r3 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;opacity:{{ o3 }};transition:opacity .4s;">Signing off key layouts before production.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="06 Method" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
+        <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">05 · How I worked</span>
+        <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">One system, many hands</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">Holding a brand together at scale is a method, not a wish. The point wasn't to design every piece myself. <br data-m="br">It was to make sure that whoever did — in Kyiv or in an outdoor build five cities away — produced something that still read as one Company Day.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;background:#0160CD;color:#FCF7EF;margin:0 calc(50% - 50vw);padding:clamp(8px,1vw,14px) calc(50vw - 50%);">
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">1</span><span style="font-weight:700;">Brief</span><span style="opacity:.8;">Brief each location and agency clearly.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">2</span><span style="font-weight:700;">Build</span><span style="opacity:.8;">Let each team build.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">3</span><span style="font-weight:700;">Check</span><span style="opacity:.8;">Check every output against the system.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">4</span><span style="font-weight:700;">Approve</span><span style="opacity:.8;">Approve, or send back.</span></div>
+    </div>
+    <p style="margin:clamp(16px,3vw,48px) 0 0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:900px;">Consistency came from the process, not from one pair of hands.</p>
+  </section>
+
+  <section data-screen-label="07 Across the country" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+      <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
+        <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">06 · Across the country</span>
+        <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">Each distinct in place, identical in brand</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">The clearest proof is the ground itself: 12 cities, 5 outdoor locations. Alongside the locations, the printed and on-site materials the agencies produced all carried the same <strong style="color: rgb(26, 25, 24);"> <br data-m="br">You shape the moment</strong> language — the consistency <br data-m="br">I was there to protect.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(12px,1.4vw,20px);">
+        <img src="assets/cd-loc-2.png" alt="“You shape the moment” photo wall, outdoor location" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
+        <img src="assets/cd-loc-1b.png" alt="Guest taking a selfie at the “You shape the moment” telephone wall" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
+        <img src="assets/cd-loc-4.png" alt="“Let's shape the story” talk stage" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
+        <img src="assets/cd-loc-6.png" alt="Giant softserve block tower" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
+        <img src="assets/cd-loc-5.png" alt="Outdoor talk under a white tent" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
+        <div style="aspect-ratio:3/2;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-loc-3c.png" alt="Superhumans Zone sign at the outdoor location" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:30% 55%;"></div>
+      </div>
+      <span style="font-size:13px;color:#1A1918;font-weight:600;">Company Day across 12 Ukrainian cities · 5 outdoor locations</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(12px,1.4vw,20px);">
+        <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-1.png" alt="“I am your troubleshooter” volunteer T-shirts" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:50% 62%;"></div>
+        <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-2.png" alt="Branded “You shape the moment” cans" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:55% 55%;"></div>
+        <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-3.png" alt="“Пледи для пікніка” sign" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:50% 55%;"></div>
+        <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-4.jpg" alt="Wayfinding signpost at the outdoor location" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:50% 68%;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">Printed &amp; on-site materials</span><span>Produced by agencies, held to the brand system I managed</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="08 Result" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">07 · Result</span>
+      <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.4;text-wrap:pretty;max-width:1100px;">The event ran across every planned location, on time and on brand.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2vw,28px);">
+      <div style="background:#0160CD;color:#FCF7EF;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+        <span style="font-size:13px;letter-spacing:.08em;color:#FCF7EF;">EVP</span>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <p style="margin:0;font-size:clamp(22px,2vw,30px);line-height:1.3;color:#FCF7EF;text-wrap:pretty;">Highest EVP in three years</p>
+          <span style="font-size:13px;line-height:1.5;color:#FCF7EF;">Event-level result — reflects the celebration as a whole, <br>not design alone.</span>
+        </div>
+      </div>
+      <div style="aspect-ratio:3/2;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-result.png" alt="Guest spinning the SoftServe prize wheel at an outdoor Company Day location" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);transform-origin:35% 50%;"></div>
+    </div>
+  </section>
+
+  <section data-screen-label="09 Closing" style="max-width:1440px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(20px,4vw,56px) clamp(48px,5vw,72px);display:flex;flex-direction:column;gap:clamp(48px,6vw,96px);">
+    <div style="display:flex;flex-direction:column;gap:32px;max-width:1100px;padding:0 0 clamp(48px,6vw,96px);">
+      <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">08 · Closing</span>
+      <p style="margin:0;font-size:17px;line-height:1.45;max-width:62ch;text-wrap:pretty;">Company Day didn't need a new idea — it needed someone to make sure the right one survived contact with twelve cities and several agencies. <br data-m="br">That's the quieter craft: not inventing the system, <br data-m="br">but protecting it everywhere it goes.</p>
+      <p style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;"><span style="color:#0160CD;">One</span> celebration. <br><span style="color:#0160CD;">Twelve</span> cities. <br><span style="color:#0160CD;">One</span> language.</p>
+    </div>
+    <a href="Anniversary.dc.html" style="display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid #1A1918;padding-top:24px;">
+      <span style="display:flex;flex-direction:column;gap:8px;"><span style="font-size:13px;color:#6B665F;">Next project</span><span style="font-size:clamp(32px,4vw,64px);line-height:1;">Anniversary Collection</span></span>
+      <span style="font-size:clamp(28px,3vw,48px);">→</span>
+    </a>
+    <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#6B665F;">
+      <span>Vlada Dzhanda · Brand Strategy &amp; Design</span>
+      <span>In collaboration with external agencies</span>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { pm: false, showTop: false,  a: -1 };
+  componentDidMount() {
+    this._onTop = () => { const nearEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160; const show = window.scrollY > window.innerHeight * 0.6 && !nearEnd; if (show !== this.state.showTop) this.setState({ showTop: show }); };
+    window.addEventListener('scroll', this._onTop, { passive: true });
+    this._onTop();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onTop); }
+  renderVals() {
+    const t = this.state.showTop;
+    return Object.assign({}, this._rv(), { pmOn: () => this.setState({ pm: true }), pmOff: () => this.setState({ pm: false }), pmOp: this.state.pm ? 1 : 0, pmPe: this.state.pm ? 'auto' : 'none', pmY: this.state.pm ? '0' : '-6px',  topOpacity: t ? 1 : 0, topPointer: t ? 'auto' : 'none', topShift: t ? '0' : '12px', toTop: e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  }
+  _rv() {
+    const v = {}, a = this.state.a;
+    [0, 1, 2, 3].forEach(i => { v['s' + i] = () => this.setState({ a: i }); v['r' + i] = a === i ? '1fr' : '0fr'; v['o' + i] = a === i ? 1 : 0; });
+    v.sOff = () => this.setState({ a: -1 });
+    return v;
+  }
+}
+</script>
+</body>
+</html>
