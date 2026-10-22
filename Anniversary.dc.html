@@ -44,6 +44,9 @@ a:hover{color:#1A1918}
 [data-m=pmenu] a{font-size:14px!important;padding:11px 14px!important;gap:12px!important}
 [data-m=pmenu] a>span+span{font-size:12px!important}
 [data-m=hib]{margin-top:32px!important}
+[data-m=close]{line-height:1.1!important}
+[data-m=k2]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[data-m=t2]{grid-template-columns:1fr!important;row-gap:28px!important}
 }
 @media (max-width:559px){[style*="margin-top: calc(18px"]{margin-top:0!important}[style*="gap: clamp(40px, 6vw, 96px)"]{row-gap:28px!important}}
 </style>
@@ -178,11 +181,11 @@ a:hover{color:#1A1918}
         <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">The anniversary program's colours run through all of them, so across different items and themes it still reads as a single collection.</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(12px,1.4vw,20px);">
+    <div data-m="k2" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
       <sc-for list="{{ kits }}" as="k" hint-placeholder-count="6">
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px;">
           <img src="{{ k.img }}" alt="{{ k.name }} kit" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#D9D5CE;">
-          <figcaption style="display:flex;justify-content:space-between;gap:16px;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">{{ k.name }}</span><span>{{ k.theme }}</span></figcaption>
+          <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">{{ k.name }}</span><span>{{ k.theme }}</span></figcaption>
         </figure>
       </sc-for>
     </div>
@@ -190,7 +193,7 @@ a:hover{color:#1A1918}
   </section>
 
   <section data-screen-label="07 In the wild" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div data-m="t2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);align-items:start;">
       <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
         <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">06 · In the wild</span>
         <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">The real test of merch isn't the mockup — it's whether people wear it.</h2>
@@ -199,7 +202,7 @@ a:hover{color:#1A1918}
         <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">A dedicated photoshoot put the collection on real people, and that's exactly where it proves itself: on bodies, in daylight, worn like clothes rather than displayed like swag.</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(12px,1.4vw,20px);">
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
       <img src="assets/an-wild-2.png" alt="Two people wearing Explore backpacks" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#D9D5CE;">
       <img src="assets/an-wild-3.png" alt="Identity patch on a cream hoodie" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#D9D5CE;">
     </div>
@@ -229,7 +232,7 @@ a:hover{color:#1A1918}
     <div style="display:flex;flex-direction:column;gap:32px;max-width:1100px;padding:0 0 clamp(48px,6vw,96px);">
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">08 · Closing</span>
       <p style="margin:0;font-size:17px;line-height:1.45;max-width:62ch;text-wrap:pretty;">Anniversary started as a question about merch and ended as a lesson I keep relearning: <strong>good design is strategy.</strong> The shift wasn't in making nicer items — it was in deciding they had to behave as one collection.</p>
-      <p style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;">We didn't make merch.<br><span style="background-image:linear-gradient(transparent 16%,#EAFF01 16%,#EAFF01 88%,transparent 88%);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 .08em;">We made a collection.</span></p>
+      <p data-m="close" style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;">We didn't make merch.<br><span style="background-image:linear-gradient(transparent 16%,#EAFF01 16%,#EAFF01 88%,transparent 88%);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 .08em;">We made a collection.</span></p>
     </div>
     <a href="English%20Vitamin.dc.html" onMouseEnter="{{ nOn }}" onMouseLeave="{{ nOff }}" style="display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid #B9B4AC;padding-top:24px;">
       <span style="display:flex;flex-direction:column;gap:8px;"><span style="font-size:13px;color:#6B665F;">Next project</span><span style="font-size:clamp(32px,4vw,64px);line-height:1;align-self:flex-start;padding:.04em .12em;margin:0 -.12em;background:{{ nBg }};transition:background .3s ease;">English Vitamin</span></span>
