@@ -44,6 +44,9 @@ a:hover{color:#00D6F2}
 [data-m=pmenu] a{font-size:14px!important;padding:11px 14px!important;gap:12px!important}
 [data-m=pmenu] a>span+span{font-size:12px!important}
 [data-m=hib]{margin-top:32px!important}
+[data-m=close]{line-height:1.1!important}
+[data-m=two]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[data-m=two]>:nth-child(n+3){display:none!important}
 }
 @media (max-width:559px){[style*="margin-top: calc(18px"]{margin-top:0!important}[style*="gap: clamp(40px, 6vw, 96px)"]{row-gap:28px!important}}
 </style>
@@ -192,7 +195,7 @@ a:hover{color:#00D6F2}
           <span style="font-size:13px;letter-spacing:.08em;color:#00D6F2;">06 · The system</span>
           <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">One letter, many forms</h2>
         </div>
-        <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+        <div style="display:flex;flex-direction:column;gap:20px;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
           <p style="margin:0;font-size:17px;line-height:1.6;color:#FFFFFF;text-wrap:pretty;">The O never changes its meaning, only its form. For each direction I defined its own colour and element — a distinct pattern or texture built from the O — that can then be combined into a shared pattern.</p>
         </div>
       </div>
@@ -241,7 +244,7 @@ a:hover{color:#00D6F2}
             <div style="overflow:hidden;">
               <div style="display:flex;flex-direction:column;gap:16px;padding:clamp(20px,2.4vw,36px) clamp(12px,1.4vw,20px) 0;">
                 <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;max-width:60ch;text-wrap:pretty;">{{ bd.text }}</p>
-                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
+                <div data-m="two" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
                   <sc-for list="{{ bd.imgs }}" as="im" hint-placeholder-count="3">
                     <div style="aspect-ratio:{{ bd.ar }};background-color:#D9D5CE;background-image:{{ im }};background-size:cover;background-position:top center;border:1px solid #E5E1DA;box-sizing:border-box;"></div>
                   </sc-for>
@@ -281,7 +284,7 @@ a:hover{color:#00D6F2}
     <div style="display:flex;flex-direction:column;gap:32px;max-width:1100px;padding:0 0 clamp(48px,6vw,96px);">
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">09 · Closing</span>
       <p style="margin:0;font-size:17px;line-height:1.45;max-width:62ch;text-wrap:pretty;">Open Tech didn't need more visual variety — it needed one idea strong enough to hold everything. The answer was the simplest thing it already had: its own first letter.</p>
-      <p style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;"><span style="color:#00D6F2;">It starts with one O.</span> Everything else joins in.</p>
+      <p data-m="close" style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;"><span style="color:#00D6F2;">It starts with one&nbsp;O.</span> Everything else joins in.</p>
     </div>
     <a href="Company%20Day.dc.html" style="display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid #1A1918;padding-top:24px;">
       <span style="display:flex;flex-direction:column;gap:8px;"><span style="font-size:13px;color:#6B665F;">Next project</span><span style="font-size:clamp(32px,4vw,64px);line-height:1;">Company Day</span></span>
