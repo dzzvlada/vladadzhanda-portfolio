@@ -44,6 +44,12 @@ a:hover{color:#0160CD}
 [data-m=pmenu] a{font-size:14px!important;padding:11px 14px!important;gap:12px!important}
 [data-m=pmenu] a>span+span{font-size:12px!important}
 [data-m=hib]{margin-top:32px!important}
+[data-m=close]{line-height:1.1!important}
+[data-m=close]{margin-top:0!important}
+[data-m=nw]{white-space:normal!important}
+[data-m=t3]{grid-template-columns:1fr!important;row-gap:28px!important}
+[data-m=t3b]{grid-column:auto!important}
+[data-m=pm2]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 @media (max-width:559px){[style*="margin-top: calc(18px"]{margin-top:0!important}[style*="gap: clamp(40px, 6vw, 96px)"]{row-gap:28px!important}}
 </style>
@@ -118,7 +124,7 @@ a:hover{color:#0160CD}
       <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">The hard part is everything that happens after a concept exists: it has to land in many very different places at once — different cities, different formats, different teams building it.</p>
       <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">Each handoff is a chance for the brand to drift. In collaboration with several external agencies that provide design and decoration services across the country, the real problem wasn't a weak concept.</p>
     </div>
-    <p style="margin:clamp(40px,5vw,80px) 0 0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;max-width:1200px;">The risk was a strong idea <span style="color:#0160CD;">falling apart in execution</span>.</p>
+    <p data-m="close" style="margin:clamp(40px,5vw,80px) 0 0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;max-width:1200px;">The risk was a strong idea <span style="color:#0160CD;">falling apart in execution</span>.</p>
   </section>
 
   <section data-screen-label="04 Challenge" style="background:#0160CD;color:#FCF7EF;">
@@ -179,26 +185,26 @@ a:hover{color:#0160CD}
       </div>
     </div>
     <div style="display:flex;flex-direction:column;background:#0160CD;color:#FCF7EF;margin:0 calc(50% - 50vw);padding:clamp(8px,1vw,14px) calc(50vw - 50%);">
-      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">1</span><span style="font-weight:700;">Brief</span><span style="opacity:.8;">Brief each location and agency clearly.</span></div>
-      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">2</span><span style="font-weight:700;">Build</span><span style="opacity:.8;">Let each team build.</span></div>
-      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">3</span><span style="font-weight:700;">Check</span><span style="opacity:.8;">Check every output against the system.</span></div>
-      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);"><span style="color:#DCE8F8;font-weight:700;">4</span><span style="font-weight:700;">Approve</span><span style="opacity:.8;">Approve, or send back.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);box-shadow:0 0 0 100vmax rgba(252,247,239,.14);clip-path:inset(0 -100vmax);"><span style="color:#DCE8F8;font-weight:700;">1</span><span style="font-weight:700;">Brief</span><span style="opacity:.8;">Brief each location and agency clearly.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);box-shadow:0 0 0 100vmax rgba(252,247,239,.14);clip-path:inset(0 -100vmax);"><span style="color:#DCE8F8;font-weight:700;">2</span><span style="font-weight:700;">Build</span><span style="opacity:.8;">Let each team build.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);box-shadow:0 0 0 100vmax rgba(252,247,239,.14);clip-path:inset(0 -100vmax);"><span style="color:#DCE8F8;font-weight:700;">3</span><span style="font-weight:700;">Check</span><span style="opacity:.8;">Check every output against the system.</span></div>
+      <div data-m="ptable" style="display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,2.15fr);gap:24px;padding:18px 12px;border-top:1px solid rgba(252,247,239,.35);font-size:clamp(17px,1.4vw,22px);line-height:1.35;color:#FCF7EF;transition:background .25s ease;" style-hover="background:rgba(252,247,239,.14);box-shadow:0 0 0 100vmax rgba(252,247,239,.14);clip-path:inset(0 -100vmax);"><span style="color:#DCE8F8;font-weight:700;">4</span><span style="font-weight:700;">Approve</span><span style="opacity:.8;">Approve, or send back.</span></div>
     </div>
-    <p style="margin:clamp(16px,3vw,48px) 0 0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:900px;">Consistency came from the process, not from one pair of hands.</p>
+    <p style="margin:clamp(16px,3vw,48px) 0 0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;"><span data-m="nw" style="white-space:nowrap;">Consistency came from the process,</span> <span data-m="nw" style="white-space:nowrap;">not from one pair of hands.</span></p>
   </section>
 
   <section data-screen-label="07 Across the country" style="max-width:1440px;margin:0 auto;padding:clamp(80px,10vw,160px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div data-m="t3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);align-items:start;">
       <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,36px);">
         <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">06 · Across the country</span>
         <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">Each distinct in place, identical in brand</h2>
       </div>
-      <div style="display:flex;flex-direction:column;gap:20px;max-width:60ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
-        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">The clearest proof is the ground itself: 12 cities, 5 outdoor locations. Alongside the locations, the printed and on-site materials the agencies produced all carried the same <strong style="color: rgb(26, 25, 24);"> <br data-m="br">You shape the moment</strong> language — the consistency I was there to protect.</p>
+      <div data-m="t3b" style="grid-column:2 / -1;display:flex;flex-direction:column;gap:20px;max-width:60ch;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4641;text-wrap:pretty;">The clearest proof is the ground itself: 12 cities, 5 outdoor locations. Alongside the locations, the printed and on-site materials the agencies produced all carried the same <strong style="color: rgb(26, 25, 24);"> You shape the moment</strong> language — the consistency I was there to protect.</p>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(12px,1.4vw,20px);">
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);">
         <img src="assets/cd-loc-2.png" alt="“You shape the moment” photo wall, outdoor location" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
         <img src="assets/cd-loc-1b.png" alt="Guest taking a selfie at the “You shape the moment” telephone wall" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
         <img src="assets/cd-loc-4.png" alt="“Let's shape the story” talk stage" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#D9D5CE;">
@@ -209,7 +215,7 @@ a:hover{color:#0160CD}
       <span style="font-size:13px;color:#1A1918;font-weight:600;">Company Day across 12 Ukrainian cities · 5 outdoor locations</span>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(12px,1.4vw,20px);">
+      <div data-m="pm2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(12px,1.4vw,20px);">
         <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-1.png" alt="“I am your troubleshooter” volunteer T-shirts" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:50% 62%;"></div>
         <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-2.png" alt="Branded “You shape the moment” cans" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:55% 55%;"></div>
         <div style="aspect-ratio:3/4;overflow:hidden;background:#D9D5CE;"><img src="assets/cd-mat-3.png" alt="“Пледи для пікніка” sign" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.25);transform-origin:50% 55%;"></div>
@@ -222,7 +228,7 @@ a:hover{color:#0160CD}
   <section data-screen-label="08 Result" style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
     <div style="display:flex;flex-direction:column;gap:28px;">
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">07 · Result</span>
-      <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.4;text-wrap:pretty;max-width:1100px;">The event ran across every planned location, on time and on brand.</p>
+      <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.4;text-wrap:pretty;"><span data-m="nw" style="white-space:nowrap;">The event ran across every planned location,</span> <span data-m="nw" style="white-space:nowrap;">on time and on brand.</span></p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2vw,28px);">
       <div style="background:#0160CD;color:#FCF7EF;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
@@ -240,7 +246,7 @@ a:hover{color:#0160CD}
     <div style="display:flex;flex-direction:column;gap:32px;max-width:1100px;padding:0 0 clamp(48px,6vw,96px);">
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">08 · Closing</span>
       <p style="margin:0;font-size:17px;line-height:1.45;max-width:62ch;text-wrap:pretty;">Company Day didn't need a new idea — it needed someone to make sure the right one survived contact with twelve cities and several agencies. That's the quieter craft: not inventing the system, but protecting it everywhere it goes.</p>
-      <p style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;"><span style="color:#0160CD;">One</span> celebration.<br><span style="color:#0160CD;">Twelve</span> cities.<br><span style="color:#0160CD;">One</span> language.</p>
+      <p data-m="close" style="margin:0;font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance;"><span style="color:#0160CD;">One</span> celebration.<br><span style="color:#0160CD;">Twelve</span> cities.<br><span style="color:#0160CD;">One</span> language.</p>
     </div>
     <a href="Anniversary.dc.html" style="display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid #1A1918;padding-top:24px;">
       <span style="display:flex;flex-direction:column;gap:8px;"><span style="font-size:13px;color:#6B665F;">Next project</span><span style="font-size:clamp(32px,4vw,64px);line-height:1;">Anniversary Collection</span></span>
