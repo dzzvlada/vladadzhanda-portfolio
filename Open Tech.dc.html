@@ -26,13 +26,23 @@ a:hover{color:#00D6F2}
 [data-m=prow]>:nth-child(3){grid-column:2;grid-row:1/3}
 [data-m=h90]{font-size:clamp(44px,12vw,90px)!important}
 [data-m=card]{width:84px!important}
-[data-m=nav]{gap:18px!important}
+[data-m=nav]{gap:18px!important;font-size:14px!important}
 }
 @media (max-width:1199px){[data-m=br]{display:none}}
 @media (min-width:560px) and (max-width:1100px){[data-m=ctx]{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)!important}}
 @media (min-width:560px) and (max-width:1100px){[data-m=tall]{aspect-ratio:3/4!important;height:auto!important;object-fit:cover!important}}
 @media (max-width:440px){[data-m=nm]{display:none!important}}
+@media (max-width:760px){
+[data-m=h1]{font-size:clamp(28px,8.4vw,40px)!important}
+[data-m=hban]{min-height:0!important;aspect-ratio:2/1!important;height:auto!important;object-fit:cover}
+[style*="padding: clamp(80px"],[style*="padding: clamp(96px"]{padding-top:64px!important;padding-bottom:64px!important}
+[data-m=map]{aspect-ratio:1/1!important}
+[data-m=dot]{width:9px!important;height:9px!important}
+[data-m=evdot]{width:14px!important;height:14px!important}
+[data-m=evlab]{font-size:12px!important}
+}
 </style>
+<script src="reveal.js"></script>
 </helmet>
 
 <div style="min-height:100vh;background:#FFFFFF;">
@@ -61,10 +71,10 @@ a:hover{color:#00D6F2}
       </div>
     </nav>
   </header>
-  <a href="#" onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;right:clamp(20px,4vw,56px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#1A1918;color:#FFFFFF;font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s,color .2s;" style-hover="background:#00D6F2;color:#1A1918;">↑</a>
+  <a href="#" onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;right:clamp(20px,4vw,56px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:transparent;color:#1A1918;font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s,color .2s;" style-hover="background:#00D6F2;color:#1A1918;">↑</a>
 
   <section data-screen-label="01 Hero" style="max-width:1440px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,56px) clamp(64px,8vw,120px);display:flex;flex-direction:column;gap:clamp(28px,3vw,44px);">
-    <h1 style="margin:0;font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1.08;letter-spacing:-.01em;">Open Tech<br><span style="color:#ABA59C;">Rebranding</span></h1>
+    <h1 data-m="h1" style="margin:0;font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1.08;letter-spacing:-.01em;">Open Tech<br><span style="color:#ABA59C;">Rebranding</span></h1>
     <img src="assets/ot-hero.png" alt="Open Tech O-forms" style="width:100%;height:auto;display:block;">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);row-gap:32px;">
       <div style="display:flex;flex-wrap:wrap;gap:24px clamp(16px,2vw,32px);">
@@ -127,18 +137,18 @@ a:hover{color:#00D6F2}
     <div style="display:flex;flex-direction:column;gap:28px;">
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">04 · My role</span>
       <p style="margin:0;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">I led the rebranding concept and the visual system.</p>
-      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">I developed the concept, presented it to the Open Tech team, and we aligned on the direction.</p>
-      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">The website itself was built and released by the Open Tech team (two of their designers) — we worked together, reviewing options and choosing which to take forward.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">I developed the concept and presented it to the Open Tech team, who approved it as the direction for the rebrand.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;max-width:62ch;text-wrap:pretty;">The website itself was built and launched by two designers from the Open Tech team. We worked on it together, reviewing options and choosing which ones to take forward.</p>
     </div>
     <div style="display:flex;flex-direction:column;width:100%;margin-top:52px;">
       <div onMouseEnter="{{ s0 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>Brand research</span></div>
-        <div style="display:grid;grid-template-rows:{{ r0 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;max-width:40ch;opacity:{{ o0 }};transition:opacity .4s;">Auditing how the brand looked and behaved, and where it fell apart.</p></div></div>
+        <div style="display:grid;grid-template-rows:{{ r0 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;max-width:40ch;opacity:{{ o0 }};transition:opacity .4s;">An audit of how the brand looked and behaved, and where it fell apart.</p></div></div>
       </div>
       <div style="padding:4px 0;font-size:18px;color:#6B665F;">↓</div>
       <div onMouseEnter="{{ s1 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:clamp(22px,2vw,30px);"><span>The idea</span></div>
-        <div style="display:grid;grid-template-rows:{{ r1 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;max-width:40ch;opacity:{{ o1 }};transition:opacity .4s;">The core concept the whole identity is built on.</p></div></div>
+        <div style="display:grid;grid-template-rows:{{ r1 }};transition:grid-template-rows .4s ease;"><div style="overflow:hidden;"><p style="margin:0;padding-top:12px;font-size:16px;line-height:1.55;color:#4A4641;max-width:40ch;opacity:{{ o1 }};transition:opacity .4s;">The core concept on which the whole identity is built.</p></div></div>
       </div>
       <div style="padding:4px 0;font-size:18px;color:#6B665F;">↓</div>
       <div onMouseEnter="{{ s2 }}" onMouseLeave="{{ sOff }}" style="border-top:1px solid #1A1918;padding:22px 0;cursor:default;display:flex;flex-direction:column;">
