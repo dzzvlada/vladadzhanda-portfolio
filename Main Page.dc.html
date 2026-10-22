@@ -44,7 +44,7 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
 }
 @media (max-width:1199px){[data-m=br]{display:none}}
 @media (max-width:760px){[data-m=abt]{font-size:17px!important;line-height:1.55!important}[data-m=tq]{font-size:18px!important;line-height:1.45!important}}
-@media (hover:none),(max-width:760px){[data-m=pprev]{display:none!important}}
+@media (hover:none) and (pointer:coarse){[data-m=pprev]{display:none!important}}
 @media (max-width:440px){[data-m=nm]{display:none!important}}
 [data-m=card]{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 </style>
@@ -198,7 +198,7 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
       <div style="display:flex;flex-direction:column;gap:24px;max-width:600px;">
         <p style="margin:0;color:#FCF7EF;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:pretty;">If you're building a brand — or rebuilding one that stopped working — I'd like to hear about it.</p>
-        <p style="margin:0;color:#FCF7EF;font-size:clamp(20px,1.75vw,28px);line-height:1.4;color:#FCF7EF;text-wrap:pretty;">I work with teams in Ukraine, Europe and the US, <br data-m="br">in Ukrainian and English.</p>
+        <p style="margin:0;color:#FCF7EF;font-size:clamp(20px,1.75vw,28px);line-height:1.4;color:#FCF7EF;text-wrap:pretty;">I work with teams in Ukraine, Europe and the US, in Ukrainian and English.</p>
         <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=vladadzhanda@gmail.com&amp;su=Project%20enquiry" target="_blank" rel="noopener" style="color:#FCF7EF;font-size:clamp(22px,2vw,32px);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;margin-top:12px;">vladadzhanda@gmail.com</a>
         <div style="display:flex;gap:10px;font-size:18px;">
           <a href="https://www.linkedin.com/in/vlada-dzhanda-9b5554221/" target="_blank" rel="noopener" style="color:#FCF7EF;">LinkedIn</a><span style="color:#FCF7EF;">·</span><a href="https://www.behance.net/dzhdes" target="_blank" rel="noopener" style="color:#FCF7EF;">Behance</a>
@@ -231,6 +231,7 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
 class Component extends DCLogic {
   state = { t: 0, sent: false, hov: -1 };
   prevRef = React.createRef();
+  canHover() { return !window.matchMedia || window.matchMedia('(hover: hover) and (pointer: fine)').matches; }
   covers = ['cover-english-vitamin','cover-ss-academy','cover-opentech','cover-company-day','cover-anniversary'];
   wrapRef = React.createRef();
   topRef = React.createRef();
@@ -279,7 +280,7 @@ class Component extends DCLogic {
     const sm = W < 760;
     const cw = sm ? 84 : Math.max(100, Math.min(190, W * 0.1));
     const rx = sm ? W / 2 - cw / 2 - 6 : Math.min(W * 0.33, W / 2 - cw / 2 - 24);
-    const ry = sm ? Math.min(H * 0.4, W * 0.52) : Math.min(H * 0.33, W * 0.16 + 40);
+    const ry = sm ? Math.min(H * 0.4, W * 0.38) : Math.min(H * 0.33, W * 0.16 + 40);
     if (W !== this._W || H !== this._H) {
       this._W = W; this._H = H;
       const h = w.querySelector('[data-m=hero]');
@@ -318,7 +319,7 @@ class Component extends DCLogic {
       topShift: this.state.showTop ? '0' : '12px',
       toTop: e => { e.preventDefault(); history.replaceState(null, '', window.location.pathname + window.location.search); window.scrollTo({ top: 0, behavior: 'smooth' }); },
       prevRef: this.prevRef,
-      h0: () => this.setState({ hov: 0 }), h1: () => this.setState({ hov: 1 }), h2: () => this.setState({ hov: 2 }), h3: () => this.setState({ hov: 3 }), h4: () => this.setState({ hov: 4 }),
+      h0: () => this.canHover() && this.setState({ hov: 0 }), h1: () => this.canHover() && this.setState({ hov: 1 }), h2: () => this.canHover() && this.setState({ hov: 2 }), h3: () => this.canHover() && this.setState({ hov: 3 }), h4: () => this.canHover() && this.setState({ hov: 4 }),
       hOff: () => this.setState({ hov: -1 }),
       hasPrev: this.state.hov >= 0,
       prevSrc: this.state.hov >= 0 ? `assets/${this.covers[this.state.hov]}.png` : '',
