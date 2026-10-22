@@ -44,8 +44,7 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
 }
 @media (max-width:1199px){[data-m=br]{display:none}}
 @media (max-width:760px){[data-m=abt]{font-size:17px!important;line-height:1.55!important}[data-m=tq]{font-size:18px!important;line-height:1.45!important}}
-@media (max-width:760px){#top{height:calc(100svh - 64px)!important;min-height:480px!important}
-#top>*{margin-top:-8svh!important}}
+@media (max-width:760px){#top{height:calc(100svh - 64px)!important;min-height:480px!important}}
 @media (hover:none) and (pointer:coarse){[data-m=pprev]{display:none!important}}
 @media (max-width:440px){[data-m=nm]{display:none!important}}
 [data-m=card]{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
@@ -280,6 +279,13 @@ class Component extends DCLogic {
     const w = this.wrapRef.current; if (!w) return;
     const W = w.clientWidth, H = w.clientHeight;
     const sm = W < 760;
+    if (sm && !this._fitH) {
+      const hd = document.querySelector('header');
+      this._fitH = Math.max(440, window.innerHeight - (hd ? hd.offsetHeight : 64));
+      w.style.setProperty('height', this._fitH + 'px', 'important');
+      w.style.setProperty('min-height', '0', 'important');
+      return;
+    }
     const cw = sm ? 84 : Math.max(100, Math.min(190, W * 0.1));
     const rx = sm ? W / 2 - cw / 2 - 6 : Math.min(W * 0.33, W / 2 - cw / 2 - 24);
     const ry = sm ? Math.min(H * 0.4, W * 0.38) : Math.min(H * 0.33, W * 0.16 + 40);
