@@ -20,30 +20,41 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
 @media (max-width:760px){
 [data-m=ptable]{grid-template-columns:28px minmax(0,1fr)!important;gap:6px 14px!important;padding-left:0!important;padding-right:0!important}
 [data-m=ptable]>:nth-child(3){grid-column:2}
-[data-m=xtable]{grid-template-columns:minmax(0,1fr) auto!important;gap:4px 16px!important}
-[data-m=xtable]>:nth-child(2){grid-column:1/-1;grid-row:2}
-[data-m=xtable]>:nth-child(3){grid-column:2;grid-row:1}
+[data-m=xtable],[data-m=xexp]{grid-template-columns:minmax(0,1fr) auto!important;gap:2px 16px!important;font-size:17px!important}
+[data-m=xtable]>:nth-child(1),[data-m=xexp]>:nth-child(2){grid-column:1;grid-row:1;font-weight:700}
+[data-m=xtable]>:nth-child(2),[data-m=xexp]>:nth-child(1){grid-column:1/-1;grid-row:2;font-size:15px;color:#6B665F!important;font-weight:400!important}
+[data-m=xtable]>:nth-child(3),[data-m=xexp]>:nth-child(3){grid-column:2;grid-row:1;font-size:15px}
+[data-m=xthead]{display:flex!important;gap:0!important}
+[data-m=xthead]>:nth-child(2){order:-1}
+[data-m=xthead]>:nth-child(2)::after{content:"\00a0/\00a0"}
+[data-m=xthead]>:nth-child(3){order:1;margin-left:auto}
+[data-m=hero]{font-size:5.4vw!important;line-height:1.05!important}
+[data-m=mnav]{gap:18px!important;font-size:14px!important;line-height:15px!important}
+[data-m=mnavbar]{padding:22px 20px!important;align-items:center!important}
+[data-m=mstar]{font-size:40px!important;font-weight:800!important;line-height:13px!important;height:13px!important;display:block!important;transform:translateY(5px)}
 [data-m=prow]{grid-template-columns:minmax(0,1fr) 28px!important;gap:4px 16px!important}
 [data-m=prow]>:nth-child(2){grid-column:1;grid-row:2;font-size:15px}
 [data-m=prow]>:nth-child(3){grid-column:2;grid-row:1/3}
 [data-m=h90]{font-size:clamp(44px,12vw,90px)!important}
-[data-m=card]{width:84px!important}
+[data-m=card]{width:64px!important}
 [data-m=thead]{display:flex!important;gap:0!important}
 [data-m=thead]>:nth-child(1)::after{content:"\00a0/\00a0"}
 [data-m=thead]>:nth-child(3){margin-left:auto}
-[data-m=nav]{gap:18px!important}
+[data-m=nav]{gap:18px!important;font-size:14px!important}
 }
 @media (max-width:1199px){[data-m=br]{display:none}}
 @media (max-width:440px){[data-m=nm]{display:none!important}}
+[data-m=card]{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 </style>
+<script src="reveal.js"></script>
 </helmet>
 
 <div style="min-height:100vh;background:#E2FFFD;">
 
   <header style="position:sticky;top:0;z-index:20;background:rgba(226,255,253,.9);backdrop-filter:blur(10px);">
-    <nav style="max-width:1600px;margin:0 auto;padding:36px clamp(20px,4.2vw,64px) 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-      <a href="#top" onClick="{{ toTop }}" aria-label="Vlada Dzhanda — home" style="color:#B83A26;font-weight:700;font-size:60px;line-height:.6;height:34px;display:flex;align-items:flex-start;">*</a>
-      <div style="display:flex;gap:clamp(24px,4.7vw,72px);font-size:clamp(16px,1.3vw,20px);">
+    <nav data-m="mnavbar" style="max-width:1600px;margin:0 auto;padding:36px clamp(20px,4.2vw,64px) 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a data-m="mstar" href="#top" onClick="{{ toTop }}" aria-label="Vlada Dzhanda — home" style="color:#B83A26;font-weight:700;font-size:60px;line-height:.6;height:34px;display:flex;align-items:flex-start;">*</a>
+      <div data-m="mnav" style="display:flex;gap:clamp(24px,4.7vw,72px);font-size:clamp(16px,1.3vw,20px);">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -51,23 +62,23 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
     </nav>
   </header>
 
-  <a href="#top" onClick="{{ toTop }}" aria-label="Back to top" style="position:fixed;right:clamp(20px,4.2vw,64px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#1A1918;color:#FCF7EF;font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s;" style-hover="background:#B83A26;color:#FCF7EF;">↑</a>
+  <a href="#top" onClick="{{ toTop }}" aria-label="Back to top" ref="{{ topRef }}" onMouseEnter="{{ topOn }}" onMouseLeave="{{ topOff }}" style="position:fixed;right:clamp(20px,4.2vw,64px);bottom:clamp(20px,3vw,40px);z-index:30;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:{{ topBg }};color:{{ topFg }};font-size:22px;line-height:1;opacity:{{ topOpacity }};pointer-events:{{ topPointer }};transform:translateY({{ topShift }});transition:opacity .3s ease,transform .3s ease,background .2s;">↑</a>
 
   <section id="top" data-screen-label="01 Hero" ref="{{ wrapRef }}" style="position:relative;height:calc(100vh - 98px);min-height:560px;overflow:hidden;">
-    <h1 style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;white-space:nowrap;text-align:center;font-weight:400;font-size:clamp(26px,2.95vw,56px);line-height:1;color:#1A1918;z-index:1;">Vlada Dzhanda<br>is a brand strategist<br>and visual designer</h1>
-    <a ref="{{ c0 }}" href="SoftServe%20Academy.dc.html" aria-label="SoftServe Academy" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(110px,12.5vw,240px);aspect-ratio:16/9;transform:translate(calc(-50% + 50px),calc(-50% - 189px));z-index:2;display:block;"><img src="assets/cover-ss-academy.png" alt="SoftServe Academy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
-    <a ref="{{ c1 }}" href="Open%20Tech.dc.html" aria-label="Open Tech" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(110px,12.5vw,240px);aspect-ratio:16/9;transform:translate(calc(-50% + 414px),calc(-50% - 19px));z-index:2;display:block;"><img src="assets/cover-opentech.png" alt="Open Tech" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
-    <a ref="{{ c2 }}" href="Anniversary.dc.html" aria-label="Anniversary" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(110px,12.5vw,240px);aspect-ratio:16/9;transform:translate(calc(-50% + 142px),calc(-50% + 200px));z-index:2;display:block;"><img src="assets/cover-anniversary.png" alt="Anniversary" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
-    <a ref="{{ c3 }}" href="English%20Vitamin.dc.html" aria-label="English Vitamin" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(110px,12.5vw,240px);aspect-ratio:16/9;transform:translate(calc(-50% - 242px),calc(-50% + 187px));z-index:2;display:block;"><img src="assets/cover-english-vitamin.png" alt="English Vitamin" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
-    <a ref="{{ c4 }}" href="Company%20Day.dc.html" aria-label="Company Day" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(110px,12.5vw,240px);aspect-ratio:16/9;transform:translate(calc(-50% - 374px),calc(-50% - 72px));z-index:2;display:block;"><img src="assets/cover-company-day.png" alt="Company Day" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
+    <h1 data-m="hero" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;white-space:nowrap;text-align:center;font-weight:400;font-size:clamp(26px,2.95vw,56px);line-height:1;color:#1A1918;z-index:1;">Vlada Dzhanda<br>is a brand strategist<br>and visual designer</h1>
+    <a ref="{{ c0 }}" href="SoftServe%20Academy.dc.html" aria-label="SoftServe Academy" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(100px,10vw,190px);aspect-ratio:16/9;transform:translate(calc(-50% + 50px),calc(-50% - 189px));z-index:2;display:block;"><img src="assets/cover-ss-academy.png" alt="SoftServe Academy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
+    <a ref="{{ c1 }}" href="Open%20Tech.dc.html" aria-label="Open Tech" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(100px,10vw,190px);aspect-ratio:16/9;transform:translate(calc(-50% + 414px),calc(-50% - 19px));z-index:2;display:block;"><img src="assets/cover-opentech.png" alt="Open Tech" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
+    <a ref="{{ c2 }}" href="Anniversary.dc.html" aria-label="Anniversary" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(100px,10vw,190px);aspect-ratio:16/9;transform:translate(calc(-50% + 142px),calc(-50% + 200px));z-index:2;display:block;"><img src="assets/cover-anniversary.png" alt="Anniversary" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
+    <a ref="{{ c3 }}" href="English%20Vitamin.dc.html" aria-label="English Vitamin" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(100px,10vw,190px);aspect-ratio:16/9;transform:translate(calc(-50% - 242px),calc(-50% + 187px));z-index:2;display:block;"><img src="assets/cover-english-vitamin.png" alt="English Vitamin" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
+    <a ref="{{ c4 }}" href="Company%20Day.dc.html" aria-label="Company Day" data-m="card" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="position:absolute;left:50%;top:50%;width:clamp(100px,10vw,190px);aspect-ratio:16/9;transform:translate(calc(-50% - 374px),calc(-50% - 72px));z-index:2;display:block;"><img src="assets/cover-company-day.png" alt="Company Day" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;" style-hover="transform:scale(1.08);"></a>
   </section>
 
   <section id="about" data-screen-label="02 About" style="min-height:100vh;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:clamp(96px,10vw,160px) clamp(20px,4.2vw,64px);">
     <div style="max-width:880px;display:flex;flex-direction:column;align-items:center;gap:clamp(24px,2.4vw,36px);text-align:center;">
       <span style="color:#B83A26;font-weight:700;font-size:40px;line-height:.6;height:22px;">*</span>
-      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:pretty;">I’m a brand strategist and designer with 6+ years building brands that hold together — <br data-m="br">from the positioning that defines them to the visual system that carries it.</p>
-      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:pretty;">My work sits where most brands break: between what a business wants and what its audience actually feels. Three years in employer branding taught me that gap is impossible to fake — people either recognise themselves in a brand, or they don’t.</p>
-      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:pretty;">I start with research, not references: audience first, business goal second, visual last. <br data-m="br">It’s slower — and it’s why the brands I build stay consistent long after I’ve handed them over.</p>
+      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:balance;">I’m a brand strategist and designer with 6+ years building brands that hold together — from the positioning that defines them to the visual system that carries it.</p>
+      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:balance;">My work sits where most brands break: between what a business wants and what its audience actually feels. Three years in employer branding taught me that gap is impossible to fake — people either recognise themselves in a brand, or they don’t.</p>
+      <p style="margin:0;font-size:clamp(20px,1.75vw,28px);line-height:1.4;text-wrap:balance;">I start with research, not references: audience first, business goal second, visual last. It’s slower — and it’s why the brands I build stay consistent long after I’ve handed them over.</p>
       <p style="margin:clamp(12px,1.5vw,24px) 0 0;font-size:14px;font-weight:600;letter-spacing:.18em;color:#B83A26;">STRATEGY/VERBAL/VISUAL</p>
     </div>
   </section>
@@ -81,27 +92,27 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
       <a data-m="prow" href="English%20Vitamin.dc.html" onMouseEnter="{{ h0 }}" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid #FCF7EF;font-size:clamp(20px,2vw,32px);line-height:1.2;color:#FCF7EF;transition:background .15s,color .15s;" style-hover="background:#E2FFFD;color:#B83A26;">
         <span style="font-weight: 700">English Vitamin</span>
         <span>Brand Strategy &amp; Identity</span>
-        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘</span>
+        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘︎</span>
       </a>
       <a data-m="prow" href="SoftServe%20Academy.dc.html" onMouseEnter="{{ h1 }}" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid #FCF7EF;font-size:clamp(20px,2vw,32px);line-height:1.2;color:#FCF7EF;transition:background .15s,color .15s;" style-hover="background:#E2FFFD;color:#B83A26;">
         <span style="font-weight: 700">SoftServe Academy</span>
         <span>Rebranding</span>
-        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘</span>
+        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘︎</span>
       </a>
       <a data-m="prow" href="Open%20Tech.dc.html" onMouseEnter="{{ h2 }}" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid #FCF7EF;font-size:clamp(20px,2vw,32px);line-height:1.2;color:#FCF7EF;transition:background .15s,color .15s;" style-hover="background:#E2FFFD;color:#B83A26;">
         <span style="font-weight: 700">Open Tech</span>
         <span>Brand Concept &amp; Identity</span>
-        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘</span>
+        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘︎</span>
       </a>
       <a data-m="prow" href="Company%20Day.dc.html" onMouseEnter="{{ h3 }}" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid #FCF7EF;font-size:clamp(20px,2vw,32px);line-height:1.2;color:#FCF7EF;transition:background .15s,color .15s;" style-hover="background:#E2FFFD;color:#B83A26;">
         <span style="font-weight: 700">Company Day</span>
         <span>Event Visual Direction</span>
-        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘</span>
+        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘︎</span>
       </a>
       <a data-m="prow" href="Anniversary.dc.html" onMouseEnter="{{ h4 }}" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid #FCF7EF;font-size:clamp(20px,2vw,32px);line-height:1.2;color:#FCF7EF;transition:background .15s,color .15s;" style-hover="background:#E2FFFD;color:#B83A26;">
         <span style="font-weight: 700">Anniversary Collection</span>
         <span>Product Design</span>
-        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘</span>
+        <span aria-hidden="true" style="justify-self:end;font-size:clamp(22px,2vw,30px);line-height:1;">↘︎</span>
       </a>
     </div>
     </div>
@@ -113,22 +124,22 @@ input::placeholder,textarea::placeholder{color:rgba(226,255,253,.7)}
   <section data-screen-label="04 Experience" style="background:#E2FFFD;color:#1A1918;"><div style="max-width:1600px;margin:0 auto;padding:clamp(80px,8vw,128px) clamp(20px,4.2vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
     <h2 data-m="h90" style="margin: 0; color: #1A1918; font-weight: 400; font-size: 90px; line-height: .95; letter-spacing: -.02em; margin-left: -.06em">Experience</h2>
     <div style="display:flex;flex-direction:column;">
-      <div data-m="thead" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:0 0 12px;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);color:#6B665F;">
+      <div data-m="xthead" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:0 0 12px;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);color:#6B665F;">
         <span style="color:#6B665F;font-size:15px;">Company</span><span style="color:#6B665F;font-size:15px;">Position</span><span style="color:#6B665F;font-size:15px;text-align:left;">Year</span>
       </div>
-      <div data-m="xtable" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
+      <div data-m="xexp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
         <span style="color:#1A1918;">English Vitamin</span><span style="color: #1A1918; font-weight: 700">Brand Strategist &amp; Designer · Consulting</span><span style="color:#1A1918;text-align:left;white-space:nowrap;">2026</span>
       </div>
-      <div data-m="xtable" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
+      <div data-m="xexp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
         <span style="color:#1A1918;">SoftServe</span><span style="color: #1A1918; font-weight: 700">Visual Designer, Employer Brand</span><span style="color:#1A1918;text-align:left;white-space:nowrap;">2023—2026</span>
       </div>
-      <div data-m="xtable" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
+      <div data-m="xexp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
         <span style="color:#1A1918;">Institut für Gebrauchsgrafik</span><span style="color: #1A1918; font-weight: 700">Graphic Designer</span><span style="color:#1A1918;text-align:left;white-space:nowrap;">2022—2023</span>
       </div>
-      <div data-m="xtable" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
+      <div data-m="xexp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
         <span style="color:#1A1918;">Be-Happy</span><span style="color: #1A1918; font-weight: 700">Graphic Designer</span><span style="color:#1A1918;text-align:left;white-space:nowrap;">2021—2022</span>
       </div>
-      <div data-m="xtable" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
+      <div data-m="xexp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 8em;gap:24px;padding:14px 0;border-bottom:1px solid #C9C3B9;font-size:clamp(17px,1.4vw,22px);line-height:1.3;transition:background .25s ease;" style-hover="background:#D4F8F5;">
         <span style="color:#1A1918;">Youth Space</span><span style="color: #1A1918; font-weight: 700">Graphic Designer, Contract</span><span style="color:#1A1918;text-align:left;white-space:nowrap;">2021—present</span>
       </div>
     </div>
@@ -220,6 +231,7 @@ class Component extends DCLogic {
   prevRef = React.createRef();
   covers = ['cover-english-vitamin','cover-ss-academy','cover-opentech','cover-company-day','cover-anniversary'];
   wrapRef = React.createRef();
+  topRef = React.createRef();
   cards = [0, 1, 2, 3, 4].map(() => React.createRef());
   base = [-82, -5, 70, 123, 201];
   angle = 0;
@@ -231,7 +243,7 @@ class Component extends DCLogic {
   ];
   componentDidMount() {
     this.setupTimer();
-    this.onScroll = () => { const nearEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160; const show = window.scrollY > window.innerHeight * 0.6 && !nearEnd; if (show !== this.state.showTop) this.setState({ showTop: show }); };
+    this.onScroll = () => { const nearEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160; const show = window.scrollY > window.innerHeight * 0.6 && !nearEnd; if (show !== this.state.showTop) this.setState({ showTop: show }); const b = this.topRef.current; if (b) { const r = b.getBoundingClientRect(); const els = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2); const red = els.some(el => el !== b && getComputedStyle(el).backgroundColor === 'rgb(184, 58, 38)'); if (red !== this.state.onRed) this.setState({ onRed: red }); } };
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.onScroll();
     const hash = window.location.hash.slice(1);
@@ -254,6 +266,7 @@ class Component extends DCLogic {
       this.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { this._W = 0; });
   }
   componentDidUpdate(p) { if (p.autoplayTestimonials !== this.props.autoplayTestimonials) this.setupTimer(); }
   componentWillUnmount() {
@@ -262,13 +275,27 @@ class Component extends DCLogic {
     const w = this.wrapRef.current; if (!w) return;
     const W = w.clientWidth, H = w.clientHeight;
     const sm = W < 760;
-    const cw = sm ? 84 : Math.max(110, Math.min(240, W * 0.125));
-    const rx = sm ? Math.min(W * 0.32, W / 2 - cw / 2 - 16) : Math.min(W * 0.27, W / 2 - cw / 2 - 12);
-    const ry = sm ? Math.min(H * 0.28, 210) : Math.min(H * 0.29, W * 0.135 + 40);
+    const cw = sm ? 64 : Math.max(100, Math.min(190, W * 0.1));
+    const rx = sm ? W / 2 - cw / 2 - 6 : Math.min(W * 0.33, W / 2 - cw / 2 - 24);
+    const ry = sm ? H * 0.4 : Math.min(H * 0.33, W * 0.16 + 40);
+    if (W !== this._W || H !== this._H) {
+      this._W = W; this._H = H;
+      const h = w.querySelector('[data-m=hero]');
+      if (h) {
+        h.style.setProperty('font-size', 'clamp(26px,2.95vw,56px)');
+        const tw = h.offsetWidth, th = h.offsetHeight, ch = cw * 9 / 16, m = 14;
+        const ok = s => ((s * tw / 2 + cw / 2 + m) / rx) ** 2 + ((s * th / 2 + ch / 2 + m) / ry) ** 2 <= 1;
+        if (!ok(1)) {
+          let lo = 0.2, hi = 1;
+          for (let k = 0; k < 16; k++) { const mid = (lo + hi) / 2; if (ok(mid)) lo = mid; else hi = mid; }
+          h.style.setProperty('font-size', (parseFloat(getComputedStyle(h).fontSize) * lo).toFixed(2) + 'px', 'important');
+        }
+      }
+    }
     this.cards.forEach((r, i) => {
       const el = r.current; if (!el) return;
       const a = (this.base[i] + this.angle) * Math.PI / 180;
-      el.style.transform = `translate(calc(-50% + ${(Math.cos(a) * rx).toFixed(1)}px), calc(-50% + ${(Math.sin(a) * ry).toFixed(1)}px))`;
+      el.style.transform = `translate(-50%, -50%) translate3d(${(Math.cos(a) * rx).toFixed(1)}px, ${(Math.sin(a) * ry).toFixed(1)}px, 0)`;
     });
   }
   setupTimer() {
@@ -280,6 +307,10 @@ class Component extends DCLogic {
     const t = this.testimonials[this.state.t];
     return {
       wrapRef: this.wrapRef,
+      topRef: this.topRef,
+      topOn: () => this.setState({ topHov: true }), topOff: () => this.setState({ topHov: false }),
+      topBg: this.state.topHov ? (this.state.onRed ? '#E2FFFD' : '#B83A26') : 'transparent',
+      topFg: this.state.topHov ? (this.state.onRed ? '#B83A26' : '#FCF7EF') : '#1A1918',
       topOpacity: this.state.showTop ? 1 : 0,
       topPointer: this.state.showTop ? 'auto' : 'none',
       topShift: this.state.showTop ? '0' : '12px',
