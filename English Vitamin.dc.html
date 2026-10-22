@@ -33,13 +33,18 @@ a:hover{color:#B83A26}
 @media (max-width:440px){[data-m=nm]{display:none!important}}
 @media (max-width:760px){
 [data-m=h1]{font-size:clamp(28px,8.4vw,40px)!important}
-[data-m=hban]{min-height:0!important;aspect-ratio:2/1!important;height:auto!important;object-fit:cover}
+[data-m=hban]{min-height:0!important;aspect-ratio:1760/339!important;height:auto!important;object-fit:cover}
 [style*="padding: clamp(80px"],[style*="padding: clamp(96px"]{padding-top:64px!important;padding-bottom:64px!important}
 [data-m=map]{aspect-ratio:1/1!important}
 [data-m=dot]{width:9px!important;height:9px!important}
 [data-m=evdot]{width:14px!important;height:14px!important}
 [data-m=evlab]{font-size:12px!important}
+[data-m=pmenu]{position:fixed!important;top:56px!important;left:16px!important;right:16px!important;min-width:0!important;padding-top:10px!important}
+[data-m=pmenu] a{font-size:14px!important;padding:11px 14px!important;gap:12px!important}
+[data-m=pmenu] a>span+span{font-size:12px!important}
+[data-m=hib]{margin-top:32px!important}
 }
+@media (max-width:559px){[style*="margin-top: calc(18px"]{margin-top:0!important}[style*="gap: clamp(40px, 6vw, 96px)"]{row-gap:28px!important}}
 </style>
 <script src="reveal.js"></script>
 </helmet>
@@ -55,7 +60,7 @@ a:hover{color:#B83A26}
         <a href="Main%20Page.dc.html#about">About</a>
         <div onMouseEnter="{{ pmOn }}" onMouseLeave="{{ pmOff }}" style="position:relative;display:flex;align-items:center;">
           <a href="Main%20Page.dc.html#projects">Projects</a>
-          <div style="position:absolute;top:100%;right:-16px;padding-top:18px;min-width:360px;opacity:{{ pmOp }};pointer-events:{{ pmPe }};transform:translateY({{ pmY }});transition:opacity .25s ease,transform .25s ease;">
+          <div data-m="pmenu" style="position:absolute;top:100%;right:-16px;padding-top:18px;min-width:360px;opacity:{{ pmOp }};pointer-events:{{ pmPe }};transform:translateY({{ pmY }});transition:opacity .25s ease,transform .25s ease;">
             <div style="background:#FCF7EF;border:1px solid #D9D5CE;display:flex;flex-direction:column;padding:4px 0;box-shadow:0 12px 32px rgba(0,0,0,.08);">
             <span style="padding:10px 16px 8px;font-size:12px;letter-spacing:.08em;color:#6B665F;">Projects</span>
             <a href="English%20Vitamin.dc.html" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:12px 16px;border-top:1px solid #D9D5CE;color:#1A1918;font-size:15px;line-height:1.3;transition:background .2s ease,color .2s ease;font-weight:700;" style-hover="background:#F9EEDD;color:#B83A26;"><span>English Vitamin</span><span style="font-size:12px;color:#6B665F;white-space:nowrap;">Brand Strategy &amp; Identity</span></a>
@@ -97,7 +102,7 @@ a:hover{color:#B83A26}
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4641; text-wrap: pretty">They came to me with no shared answer to one question: <br data-m="br"><em>who are we, and how do we stay that way as we grow?</em> <br data-m="br">The visuals shifted post to post, and the brand leaned <br data-m="br">entirely on its two founders.</p>
       </div>
     </div>
-    <figure style="margin:0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:504px;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:504px;justify-self:end;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
       <img src="assets/ev-old-feed.png" alt="English Vitamin Instagram feed before the rebrand" style="display:block;width:100%;height:auto;">
       <figcaption style="display:flex;justify-content:space-between;gap:16px;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">Before the rebrand</span><span>Old feed grid</span></figcaption>
     </figure>
@@ -155,8 +160,8 @@ a:hover{color:#B83A26}
       <span style="font-size:13px;letter-spacing:.08em;color:#6B665F;">04 · Thinking in action — the market insight</span>
       <h2 style="margin:0;font-weight:400;font-size:clamp(26px,2.6vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:pretty;">The category was crowded in one corner</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);margin-top:calc(28px - clamp(40px,5vw,72px));">
-      <p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 62ch; text-wrap: pretty">I mapped the category on two axes: mass ↔︎ personal, and fast ↔︎ systematic. Almost everyone clustered in the same corner — mass and fast — selling atmosphere: aesthetics, energy, the feeling of a shortcut.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:0;row-gap:24px;margin-top:calc(28px - clamp(40px,5vw,72px));">
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 62ch; text-wrap: pretty; padding-right: clamp(24px,3vw,48px)">I mapped the category on two axes: mass ↔︎ personal, and fast ↔︎ systematic. Almost everyone clustered in the same corner — mass and fast — selling atmosphere: aesthetics, energy, the feeling of a shortcut.</p>
       <p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 62ch; text-wrap: pretty">That corner was crowded. The opposite one — personal <br data-m="br">and systematic — was open. So the strategy was deliberate: move English Vitamin into the space the category had left behind, and own <strong>genuine support and honesty.</strong></p>
     </div>
     <div data-m="map" style="position:relative;width:100%;aspect-ratio:16/8;border:1px solid #1A1918;box-sizing:border-box;">
@@ -181,7 +186,7 @@ a:hover{color:#B83A26}
         <span data-m="evlab" style="font-size:14px;font-weight:600;white-space:nowrap;">English Vitamin</span>
       </div>
     </div>
-    <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:900px;">Competitors sell atmosphere. English Vitamin could own what <br data-m="br">the category left behind — genuine support and honesty.</p>
+    <p style="margin:0;font-size:clamp(24px,2.4vw,36px);line-height:1.25;letter-spacing:-.01em;max-width:1100px;text-wrap:balance;">Competitors sell atmosphere. English Vitamin could own what the category left behind — genuine support and honesty.</p>
   </section>
 
   <section data-screen-label="07 Decision" style="background:#1A1918;color:#FCF7EF;">
@@ -197,7 +202,7 @@ a:hover{color:#B83A26}
           <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #FCF7EF; text-wrap: pretty">We didn't. We went back to the palette and asked a sharper question: how do we stand apart without harming the brand? The difference was never in the colour — it lived in the system. So we refined the palette's proportions and let <br data-m="br">the typography, composition, and tone do the distinguishing.</p>
         </div>
       </div>
-      <p style="margin: 0; font-size: clamp(24px,2.4vw,36px); line-height: 1.15; letter-spacing: -.015em; color: #FCF7EF; max-width: 1100px; text-wrap: pretty">That's the whole point: a brand strategy isn't a document that sits still. <br data-m="br">It's a tool that makes decisions.</p>
+      <p style="margin: 0; font-size: clamp(24px,2.4vw,36px); line-height: 1.15; letter-spacing: -.015em; color: #FCF7EF; max-width: none; text-wrap: pretty">That's the whole point: a brand strategy isn't a document that sits still. <br data-m="br">It's a tool that makes decisions.</p>
     </div>
   </section>
 
@@ -211,7 +216,7 @@ a:hover{color:#B83A26}
           <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4641; text-wrap: pretty">The posts stay in Ukrainian — proof the brand practices <br data-m="br">the closeness it promises.</p>
         </div>
       </div>
-      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:504px;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px;width:100%;max-width:504px;justify-self:end;margin-top:calc(18px + clamp(24px,2.4vw,36px) + 0.6vw);">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,24px);align-items:start;">
           <img src="assets/ev-phone-profile.png" alt="English Vitamin Instagram profile after the rebrand" style="display:block;width:100%;height:auto;">
           <img src="assets/ev-phone-post.png" alt="English Vitamin post after the rebrand" style="display:block;width:100%;height:auto;">
@@ -219,7 +224,7 @@ a:hover{color:#B83A26}
         <figcaption style="display:flex;justify-content:space-between;gap:16px;font-size:13px;color:#6B665F;"><span style="color:#1A1918;font-weight:600;">After the rebrand</span><span>New feed grid</span></figcaption>
       </figure>
     </div>
-    <h3 style="margin: 0 0 calc(-1 * clamp(16px,2vw,40px)); font-weight: 400; font-size: 17px; line-height: 1.25; letter-spacing: -.01em">How it's built:</h3>
+    <h3 data-m="hib" style="margin: 0 0 calc(-1 * clamp(16px,2vw,40px)); font-weight: 400; font-size: 17px; line-height: 1.25; letter-spacing: -.01em">How it's built:</h3>
     <div style="display:flex;flex-direction:column;border-bottom:1px solid #1A1918;">
       <div onMouseEnter="{{ b0 }}" onMouseLeave="{{ bOff }}" style="border-top:1px solid #1A1918;background:{{ bg0 }};color:{{ fg0 }};transition:background .35s ease,color .35s ease;cursor:default;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:clamp(32px,3.6vw,60px) clamp(12px,1.4vw,20px) 0;">
